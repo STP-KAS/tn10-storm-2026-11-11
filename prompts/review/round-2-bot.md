@@ -50,7 +50,7 @@ I accept these plainly.
 
 ## Counting on public nodes, Mini sending
 
-**Note:** the operator has not raised this idea with Pulse or Build yet. This round 2 question is the first time it is being put to them.
+**Note:** the operator has not raised this idea with Build yet. This round 2 question is the first time it is being put to Build.
 
 The operator asked whether counting could move to public TN10 nodes, with Mini used only for sending.
 
