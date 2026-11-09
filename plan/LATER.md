@@ -14,6 +14,6 @@
 
 **Mint rush and the fee-capped water app.** Their own plans. [Open question 8](https://github.com/STP-KAS/tn-master/blob/main/docs/OPEN-QUESTIONS.md).
 
-**A node upgrade onto rusty-kaspa master `4863866f`.** The covenant-id index and the accepting-block RPC stay off this clock. Counting uses the node that is already running.
+**A node upgrade onto rusty-kaspa master `4863866f`.** The covenant-id index and the accepting-block RPC stay off this clock. Mini counts on the node Mini already runs. The desk node process is stopped for the send, and the binary is not switched.
 
 **Scaling the offer from the 11 Oct peak minute of 3,583.1.** The offer uses 3,040.

@@ -1,6 +1,6 @@
 > **Experimental. We are just trying this.** [Disclaimer](../DISCLAIMER.md) · This paste does not start a sender.
 >
-> **Paste this on the bot for the review.** Not during Tuesday 10 Nov 2026, 18:20–22:15 UTC. The Wednesday paste is [GO-BOT.md](../GO-BOT.md). Do not paste that until this file contains `REVIEW_CLOSED`, and you do not write that line.
+> **Paste this on the bot only if a review is still wanted.** Not during Tuesday 10 Nov 2026, 18:20–22:15 UTC. This neuron does not use the bot as a sender. [GO-BOT.md](../GO-BOT.md) refuses to send. You do not write `REVIEW_CLOSED`.
 
 # YOU ARE THE BOT, ON THE REVIEW
 
@@ -17,7 +17,7 @@ You do not arm a runner. You do not start kaspad. You do not spend a coin. You d
 3. [GO-DESK.md](../GO-DESK.md), [GO-MINI.md](../GO-MINI.md), [GO-BOT.md](../GO-BOT.md)
 4. The confirmation you are being asked to match in form: [tn10-storm-2026-11-08-confirm](https://github.com/STP-KAS/tn10-storm-2026-11-08-confirm)
 
-You know the heavy payment loads. The share this plan gives you is 1,013 tx/s on step 3 and 2,026 tx/s on step 4, at 150 sompi per gram, and 0 on every other phase. Say whether that share is one you can hold, from the runs you have already logged. If your machine freezes under it, say the freeze in the review file. The plan already steps down when you cannot hold it. A review that pretends the box will stay up is a bad review.
+You are not a sender on this neuron. The desk sends the sixteen families and the whole payment climb, up to 4,053 tx/s. Mini is the only chain counter. The desk node process is stopped for the send, and the senders use public TN10 nodes. Read [plan/TRIES.md](../plan/TRIES.md). Your machine freezes, which is why the share is not yours. Say whether that shape can hold, from the runs you have already logged. A review that puts a send back on this machine ignores the freeze.
 
 ## What you write
 
@@ -26,7 +26,7 @@ Add a new file. Do not replace this page. Do not replace a go file.
 - First round: `prompts/review/round-1-bot.md`
 - Later rounds: `prompts/review/round-N-bot.md`
 
-Lead with the lines you dispute. Then what you would change in the offer, the fee, or the arm. Then one paragraph on whether 1,013 and 2,026 tx/s are inside a rate you have held.
+Lead with the lines you dispute. Then what you would change in the offer, the fee, or the arm. Then one paragraph on whether one desk can sign 4,053 tx/s with its node process stopped.
 
 Push that one file. Call git by its full path. If the push fails, try once more, then stop and say the git error.
 

@@ -2,7 +2,7 @@
 
 # Plan
 
-The day is **Wed 11 Nov 2026**. T0 is 12:00 UTC. The repo is `tn10-storm-2026-11-11`. The standing rule is [RULES.md](../RULES.md). The pastes carry this clock. They refuse to start until `REVIEW_CLOSED` is in [prompts/REVIEW.md](../prompts/REVIEW.md).
+The day is **Wed 11 Nov 2026**. T0 is 12:00 UTC. The repo is `tn10-storm-2026-11-11`. The standing rule is [RULES.md](../RULES.md). The pastes carry this clock. They refuse to start until `REVIEW_CLOSED` is in [prompts/REVIEW.md](../prompts/REVIEW.md). This clock is try 1. The reasoning is [TRIES.md](TRIES.md).
 
 ## Families
 
@@ -12,24 +12,25 @@ The quiet goal is one 900-second window in which every family has at least **1,0
 
 ## Payment offers
 
-The capacity line is **3,040** simple payments per second. The offers are one third, two thirds, three thirds, and four thirds of that line.
+The capacity line is **3,040** simple payments per second. The offers are one third, two thirds, three thirds, and four thirds of that line. The desk sends the whole offer. One machine.
 
-| Step | Offer, tx/s | Desk | Bot |
-|---:|---:|---:|---:|
-| 1 | 1,013 | 1,013 | 0 |
-| 2 | 2,027 | 2,027 | 0 |
-| 3 | 3,040 | 2,027 | 1,013 |
-| 4 | 4,053 | 2,027 | 2,026 |
+| Step | Offer, tx/s | Desk |
+|---:|---:|---:|
+| 1 | 1,013 | 1,013 |
+| 2 | 2,027 | 2,027 |
+| 3 | 3,040 | 3,040 |
+| 4 | 4,053 | 4,053 |
 
-The desk does not offer more than 2,027 tx/s. That sits under the 6–7 Oct desk hold of 2,207 tx/s seen accepted. The bot's share is only the amount above 2,027. If the bot is down or frozen, the desk keeps 2,027, the phase file says `SHORT`, and the climb stops. The next phase is the step-down.
+The 6–7 Oct desk hold of 2,207 tx/s was with a local node also verifying. Offering 4,053 from this machine, with that process stopped, has not been measured. If a step is not stable, the phase file says `SHORT` and the climb stops. The next phase is the step-down.
 
 ## Stable, then thirty minutes
 
 A step is stable when three consecutive full minutes all have:
 
-- the desk node and the Mini node synced, and the DAA moving
+- Mini's node synced, and the DAA moving
+- the public submit path answering
 - no sender-off, pool-low, node-drop, or proc-exit
-- at least 8 merged blocks per second on the desk read
+- at least 8 merged blocks per second on Mini's read
 - the payment offer within 10 percent of that step's number
 
 The thirty minutes start on the next minute. They are not restarted because one minute inside them dips. Three consecutive minutes that break the list end the hold. The file keeps the minutes already counted. The climb stops. The step-down begins.
@@ -52,7 +53,7 @@ A phase that would start after its latest minute is skipped. The runner writes t
 
 ## Step-down and recovery
 
-From whatever offer is live, the payment offer steps to the next lower line every two minutes until it is 1,013 tx/s, and the bot's offer returns to 0. That step-down is at most 10 minutes. Then the families and the 1,013 tx/s payment offer run together for two hours.
+From whatever offer is live, the payment offer steps to the next lower line every two minutes until it is 1,013 tx/s. That step-down is at most 10 minutes. Then the families and the 1,013 tx/s payment offer run together for two hours.
 
 ## Fees
 
@@ -64,7 +65,9 @@ Recount before the 11:50 genesis. The abort line stays **2,500 coins** and **18,
 
 ## Abort
 
-Stop the affected sender on sender-off, pool-low, node-drop, or proc-exit. A node that is not synced does not get a start. A failed submit is a reject. Leave kaspad and the tunnel running. Do not switch the node binary. Do not enable an index the process was started without.
+Stop the affected sender on sender-off, pool-low, node-drop, or proc-exit. A submit path that is not synced does not get a start. A failed submit is a reject.
+
+Tuesday's runner uses the desk node. This neuron leaves that process up until Tuesday's runner is down. Before Wednesday genesis the desk stops its node process. The chain data stays on disk. The senders submit to public TN10 nodes. The process stays stopped until the method file is on origin. Then it may be started again. The data is not deleted. The binary is not switched. An index is not turned on.
 
 Miners stay off. A stretch under 8 merged blocks per second is recorded as miner-out. It is not scored as a family failure, and it is not a stable minute.
 

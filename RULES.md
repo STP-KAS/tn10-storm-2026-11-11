@@ -10,9 +10,9 @@ This repo is one neuron. It is not a restart of Tuesday and not a restart of the
 
 ## Who publishes
 
-The desk sends the sixteen families for the whole clock, sends payments up to 2,027 tx/s, and counts. The desk runner publishes one file under [counts/desk/](counts/desk/README.md) when each phase closes.
+The desk sends the sixteen families for the whole clock and sends the whole payment climb. The desk runner publishes one file under [counts/desk/](counts/desk/README.md) when each phase closes. That file is the offer, the attempts, and the rejects. It is the sender log. It is not a chain count.
 
-Mini counts and does not send. Mini's runner publishes the same phases under [counts/mini/](counts/mini/README.md). Each machine writes only its own folder. The chat does not publish either folder. The bot does not write them.
+Mini is the only chain counter. Mini counts and does not send. Mini's runner publishes the same phases under [counts/mini/](counts/mini/README.md). Each machine writes only its own folder. The chat does not publish either folder. The bot does not write them and does not send.
 
 | File | What it covers |
 |---|---|
@@ -40,7 +40,7 @@ Call git by its full path. Keep the errors. Empty output is a failed read. Read 
 
 ## One runner
 
-One runner on the desk. One runner on Mini. One runner on the bot for the payment share in [plan/PLAN.md](plan/PLAN.md). The runner is a process with a log. The chat is not the runner. A second runner is a fault. A scheduled task is not the arm.
+One runner on the desk. One runner on Mini. The bot does not run a sender on this neuron. The runner is a process with a log. The chat is not the runner. A second runner is a fault. A scheduled task is not the arm.
 
 The operator arms the machine. He sends the matching paste. Until that send, the machine waits.
 

@@ -14,9 +14,9 @@ Families 1–13 and families 14–16 are two cohorts in every file. The score is
 
 ## A payment
 
-The desk file counts the desk's own payment accepts and rejects, and the bot file is not a count. The desk runner also records the offer it commanded and the offer the bot reported, as counts per minute.
+The desk file records the offer the desk commanded, the attempts, and the rejects, as counts per minute. It is the sender log. It is not a chain count.
 
-Mini's file counts non-coinbase transactions the Mini node accepted in the minute. That number includes base load. It is Mini's reading. It is not averaged with the desk.
+Mini's file is the chain count. It counts accepted hops and the non-coinbase transactions the Mini node accepted in the minute. That number includes base load. It is the only chain reading on try 1. It is not averaged with the desk.
 
 A minute not read in full stays marked. The gap is not filled. Hops and payments after a phase are listed apart, under the next file if they fall in it.
 

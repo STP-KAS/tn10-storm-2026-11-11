@@ -1,6 +1,6 @@
 > **Experimental. We are just trying this.** [Disclaimer](DISCLAIMER.md) · Kaspa Testnet-10 only; tKAS has no value. Counts only.
 >
-> **Paste this on Mini only.** The desk's file is [GO-DESK.md](GO-DESK.md). The bot's Wednesday file is [GO-BOT.md](GO-BOT.md). Wed 11 Nov 2026. T0 is 12:00 UTC. The standing rule is [RULES.md](RULES.md).
+> **Paste this on Mini only.** The desk's file is [GO-DESK.md](GO-DESK.md). The bot is not in this test. Wed 11 Nov 2026. T0 is 12:00 UTC. The standing rule is [RULES.md](RULES.md). The reasoning is [plan/TRIES.md](plan/TRIES.md).
 >
 > **Refuse to start unless [prompts/REVIEW.md](prompts/REVIEW.md) contains the line `REVIEW_CLOSED`.** A paste before that line does not start a counter and does not pick a later hour.
 
@@ -14,7 +14,7 @@ If the operator says this machine is the desk, or the bot, stop. Do not start a 
 
 You know you are Mini because this file was pasted here. The session name does not decide it.
 
-You count on your own node. You do not send. You do not run genesis. You do not mine. You do not hold a key. The desk sends the families and the payments up to 2,027 per second, and the desk also counts. The bot sends the payment share above that, on two of the steps. The rest of this file is the whole test, so you can see it. You do only the Mini work.
+You count on your own node. You are the only chain counter. You do not send. You do not run genesis. You do not mine. You do not hold a key. The desk sends the families and the whole payment climb, including 4,053 per second. The desk does not count the chain. The rest of this file is the whole test, so you can see it. You do only the Mini work.
 
 [GO.md](GO.md) is the map. It does not start a machine.
 
@@ -53,7 +53,7 @@ You count every phase below. You publish one file at the end of each phase. The 
 | by 13:00 | by 14:00 | Quiet ends. Publish QUIET.md |
 | next, latest 13:00 | | One third, 1,013 tx/s, then a 30-minute hold if it becomes stable. Publish HOLD-1.md |
 | latest 13:50 | | Two thirds, 2,027 tx/s. Publish HOLD-2.md |
-| latest 14:40 | | Three thirds, 3,040 tx/s. The bot joins. Publish HOLD-3.md |
+| latest 14:40 | | Three thirds, 3,040 tx/s. Publish HOLD-3.md |
 | latest 15:30 | | Four thirds, 4,053 tx/s. Publish HOLD-4.md |
 | latest 16:20 | | Step-down to 1,013. Publish DOWN.md |
 | latest 16:30 | | Recovery, two hours, families still on, payments at 1,013. Publish RECOVERY.md |

@@ -48,6 +48,10 @@ On a network that is offered 1,013, then 2,027, then 3,040, then 4,053 simple pa
 
 After the top hold, the payment offer steps back to 1,013 and the families keep hopping for two hours. That window is the recovery.
 
+## Who sends
+
+The desk is the only sender. Mini is the only chain counter. The bot stays out of this neuron. The desk node process is stopped for the send window, after Tuesday's runner is down, and the senders use public TN10 nodes. The chain data stays. The log is [plan/TRIES.md](plan/TRIES.md). This clock is try 1. Pulse is not asked to count it.
+
 ## What stays on its own clock
 
 Tuesday 10 Nov 2026, 19:00 UTC, is [tn10-storm-2026-11-10](https://github.com/STP-KAS/tn10-storm-2026-11-10). File 1 of that count is due Wed 11 Nov 2026 at 12:00 CET (11:00 UTC). This neuron's paste is 11:20 UTC. The list of everything else left off this clock is [plan/LATER.md](plan/LATER.md).

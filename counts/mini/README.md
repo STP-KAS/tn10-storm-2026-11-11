@@ -4,7 +4,7 @@
 
 # Mini counts
 
-The same seven phases as the desk. Mini publishes each one. The chat does not.
+The same seven phases. Mini publishes each one. Mini is the only chain counter. The chat does not.
 
 | File | Phase |
 |---|---|
@@ -16,4 +16,4 @@ The same seven phases as the desk. Mini publishes each one. The chat does not.
 | DOWN.md | step-down |
 | RECOVERY.md | recovery |
 
-Mini's non-coinbase count includes base load. It is not averaged with the desk. The rule is [plan/COUNT.md](../../plan/COUNT.md).
+Mini's non-coinbase count includes base load. It is the chain reading. The rule is [plan/COUNT.md](../../plan/COUNT.md).

@@ -1,6 +1,6 @@
 > **Experimental. We are just trying this.** [Disclaimer](DISCLAIMER.md) · Kaspa Testnet-10 only; tKAS has no value. **Wed 11 Nov 2026, 12:00 UTC (13:00 CET).** Mainnet: **not tested (label B)**.
 >
-> **Not armed.** [prompts/REVIEW.md](prompts/REVIEW.md) does not yet contain `REVIEW_CLOSED`. A read does not start a runner. Several review rounds come first. The bot reviews. Then the operator writes the closed line. Then, on Wednesday, the operator sends the pastes.
+> **Not armed.** [prompts/REVIEW.md](prompts/REVIEW.md) does not yet contain `REVIEW_CLOSED`. A read does not start a runner. This clock is try 1. The reasoning is [plan/TRIES.md](plan/TRIES.md). The operator writes the closed line. Then, on Wednesday, the operator sends the desk paste and the Mini paste.
 >
 > **Part of [tn-master](https://github.com/STP-KAS/tn-master)**, the map of every TN10 storm. The rule for every neuron is [docs/NEURON.md](https://github.com/STP-KAS/tn-master/blob/main/docs/NEURON.md).
 
@@ -12,20 +12,19 @@
 
 **The form this plan copies:** [tn10-storm-2026-11-08-confirm](https://github.com/STP-KAS/tn10-storm-2026-11-08-confirm). That night finished at 16:10 UTC. Both publishers fired. The reading is [logs/METHOD.md](https://github.com/STP-KAS/tn10-storm-2026-11-08-confirm/blob/main/logs/METHOD.md).
 
-## The three pastes
+## The pastes
 
 One story. One file for each computer. Paste the file that names the machine in front of you. The first sentence must be that machine. If it names another one, stop and paste the other file.
 
 | Machine | Paste | First sentence | When |
 |---|---|---|---|
 | **bot, for the review** | [prompts/REVIEW.md](prompts/REVIEW.md) | GROKBOT. I review. I do not send. | before Wednesday, and not during Tuesday's window |
-| **desk** | [GO-DESK.md](GO-DESK.md) | DESK. I send and I count. | Wed 11 Nov, 11:20 UTC, after `REVIEW_CLOSED` |
+| **desk** | [GO-DESK.md](GO-DESK.md) | DESK. I send. I do not count. | Wed 11 Nov, 11:20 UTC, after `REVIEW_CLOSED` |
 | **Mini** | [GO-MINI.md](GO-MINI.md) | MINI. I count. I do not send. | the same minute |
-| **bot, for the payments** | [GO-BOT.md](GO-BOT.md) | GROKBOT. I send payments on the third and the fourth step. I do not send covenants. | the same minute |
 
 Each go file is the whole plan. Grok Build does not guess the machine from its own name. The pasted file is the machine. [GO.md](GO.md) is the map. It does not start a session.
 
-Expect more than one review round. The bot adds a file under [prompts/review/](prompts/review/README.md). Build answers in the next file. The operator writes `REVIEW_CLOSED` when the rounds are done. The bot does not write that line. A Wednesday paste before that line refuses to start, and it does not pick a later hour.
+The operator writes `REVIEW_CLOSED` when this shape is the one he wants. The bot does not write that line. A Wednesday paste before that line refuses to start, and it does not pick a later hour. The bot is not a sender. [GO-BOT.md](GO-BOT.md) refuses to start one.
 
 ## Clock
 
@@ -34,7 +33,7 @@ Times are UTC first. Desk local is CET (UTC+1). The quiet phase ends when its go
 | | UTC | CET |
 |---|---|---|
 | Tuesday's File 1 is due, in the Tuesday repo | 11:00 | 12:00 |
-| Operator sends the three pastes, if review is closed and Tuesday's runner is down | **11:20** | **12:20** |
+| Operator sends the desk paste and the Mini paste, if review is closed and Tuesday's runner is down | **11:20** | **12:20** |
 | Mini's armed line on origin | **11:30** | **12:30** |
 | Sixteen hashes proved, or the desk stops | **11:40** | **12:40** |
 | Genesis | 11:50 | 12:50 |
@@ -43,19 +42,19 @@ Times are UTC first. Desk local is CET (UTC+1). The quiet phase ends when its go
 | Quiet phase latest end | 13:00 | 14:00 |
 | Recovery latest start | **16:30** | **17:30** |
 | Recovery ends if it started at 16:30 | 18:30 | 19:30 |
-| Both publishers finished, tn-master updated | **18:45** | **19:45** |
+| Mini's counts and the method file are on origin, tn-master updated | **18:45** | **19:45** |
 
-The steps, the offers, and the latest minute of each phase are in [plan/PLAN.md](plan/PLAN.md). The same clock is in all three pastes.
+The steps, the offers, and the latest minute of each phase are in [plan/PLAN.md](plan/PLAN.md). The same clock is in the desk paste and the Mini paste.
 
 ## What and why
 
-**What.** Sixteen covenant families, all on from T0 through recovery. Offer 1.2 hop/s per family. Boson. Stagger 0. Families 1–13 pay 100 sompi/gram. Families 14–16 pay 200. Payment senders pay 150. The payment offer is 1,013 tx/s, then 2,027, then 3,040, then 4,053. Each of those holds for 30 minutes after it is stable. Then the offer steps back to 1,013 and the families continue for two hours. The desk sends the families and the payments up to 2,027 tx/s, and the desk counts. Mini counts. The bot sends only the payment share above 2,027. Miners stay off.
+**What.** Sixteen covenant families, all on from T0 through recovery. Offer 1.2 hop/s per family. Boson. Stagger 0. Families 1–13 pay 100 sompi/gram. Families 14–16 pay 200. Payment senders pay 150. The payment offer is 1,013 tx/s, then 2,027, then 3,040, then 4,053. The desk sends all of it. Each hold is 30 minutes after the step is stable. Then the offer steps back to 1,013 and the families continue for two hours. Mini is the only chain counter. The desk node process is stopped for the send, after Tuesday's runner is down, and the senders use public TN10 nodes. The chain data stays. The bot stays out. Miners stay off.
 
 **Why.** The full why is [WHY.md](WHY.md). The mass-ceiling line used here is 3,040 payments per second. Sixteen is the largest mix whose confirm reading cleared 1,026 hops per family in 900 seconds.
 
 ## Review
 
-The bot's review paste is [prompts/REVIEW.md](prompts/REVIEW.md). Paste that before Tuesday 18:00 UTC, or after Tuesday's runner has exited and before Wednesday 11:00 UTC. Do not paste it during Tuesday 18:20–22:15 UTC. The bot's machine freezes. A review round is a file in this repo. It is not a load.
+The bot stays out of this test. Its machine freezes. [GO-BOT.md](GO-BOT.md) does not start a sender. A review file, if one is still wanted on another day, is [prompts/REVIEW.md](prompts/REVIEW.md). Do not paste it during Tuesday 18:20–22:15 UTC. A review round is a file in this repo. It is not a load.
 
 ## Map
 
@@ -68,7 +67,8 @@ The bot's review paste is [prompts/REVIEW.md](prompts/REVIEW.md). Paste that bef
 | [GO.md](GO.md) | Map of the pastes. Does not start a machine |
 | [GO-DESK.md](GO-DESK.md) | Desk paste |
 | [GO-MINI.md](GO-MINI.md) | Mini paste |
-| [GO-BOT.md](GO-BOT.md) | Bot paste for Wednesday's payment share |
+| [GO-BOT.md](GO-BOT.md) | Bot paste. It refuses to send |
+| [plan/TRIES.md](plan/TRIES.md) | Why try 1 is shaped this way, and why more runs are expected |
 | [prompts/REVIEW.md](prompts/REVIEW.md) | Bot paste for the review. This is the one to send first |
 | [go/README.md](go/README.md) | Which paste goes on which computer |
 | [plan/PLAN.md](plan/PLAN.md) | Offers, fees, stable, latest minutes |

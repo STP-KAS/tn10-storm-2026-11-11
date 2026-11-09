@@ -28,6 +28,6 @@ The abort line stays **2,500 coins** and **18,000 usable tKAS** on family key 0.
 
 Each landed hop locks 1 tKAS. The lane has to cover Tuesday and then Wednesday, and still clear the abort line at each genesis.
 
-Bot payments are step 3 and step 4 only. Several thousand fast coins sit on the bot wallet for that share. Desk payments need several thousand fast coins on the Build wallet. A payment spends back to the same wallet. The fee is 150 sompi per gram. The coin has to stay above 1 tKAS.
+The bot stays out of this neuron. The fast coins already on that wallet stay where they are. Desk payments need several thousand fast coins on the Build wallet, because the desk sends the whole climb. A payment spends back to the same wallet. The fee is 150 sompi per gram. The coin has to stay above 1 tKAS.
 
-The bot paste for this funding is [FUND-BOT.md](FUND-BOT.md). The Wednesday send paste is still [GO-BOT.md](../GO-BOT.md), and it still refuses without `REVIEW_CLOSED`.
+The bot paste for this funding is [FUND-BOT.md](FUND-BOT.md). It checks. It does not send.

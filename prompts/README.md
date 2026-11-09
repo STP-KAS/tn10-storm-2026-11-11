@@ -7,8 +7,8 @@
 | [FUND.md](FUND.md) | desk | before Tuesday, when the senders need fast coins | DESK. I fund the senders. I do not start the neuron. |
 | [FUND-BOT.md](FUND-BOT.md) | bot | the same day, before the review paste | GROKBOT. I do not send covenants. I check the payment coins. |
 | [REVIEW.md](REVIEW.md) | bot | before Tuesday 18:00 UTC, or after Tuesday's runner exits and before Wednesday 11:00 UTC | GROKBOT. I review. I do not send. |
-| [../GO-DESK.md](../GO-DESK.md) | desk | Wed 11 Nov 2026, 11:20 UTC, after `REVIEW_CLOSED` | DESK. I send and I count. |
+| [../GO-DESK.md](../GO-DESK.md) | desk | Wed 11 Nov 2026, 11:20 UTC, after `REVIEW_CLOSED` | DESK. I send. I do not count. |
 | [../GO-MINI.md](../GO-MINI.md) | Mini | the same minute | MINI. I count. I do not send. |
-| [../GO-BOT.md](../GO-BOT.md) | bot | the same minute | GROKBOT. I send payments on the third and the fourth step. I do not send covenants. |
+| [../GO-BOT.md](../GO-BOT.md) | bot | any time | GROKBOT. I do not send. |
 
-The review lands in [review/](review/README.md). More than one round is the expectation. `REVIEW_CLOSED` is the operator's line, written into [REVIEW.md](REVIEW.md) when the rounds are done. Until that line is on origin, the three Wednesday pastes refuse to start.
+`REVIEW_CLOSED` is the operator's line. Until that line is on origin, the Wednesday pastes refuse to start. The bot is not a sender on this neuron. The reasoning is [../plan/TRIES.md](../plan/TRIES.md).
