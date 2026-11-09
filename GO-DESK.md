@@ -1,6 +1,6 @@
 > **Experimental. We are just trying this.** [Disclaimer](DISCLAIMER.md) · Kaspa Testnet-10 only; tKAS has no value. Mainnet: **not tested (label B)**.
 >
-> **Paste this on the desk only.** Mini's file is [GO-MINI.md](GO-MINI.md). The bot is not in this test. Wed 11 Nov 2026. T0 is 12:00 UTC. The standing rule is [RULES.md](RULES.md). The reasoning is [plan/TRIES.md](plan/TRIES.md).
+> **Paste this on the desk only.** Mini's file is [GO-MINI.md](GO-MINI.md). The bot's file is [GO-BOT.md](GO-BOT.md). Wed 11 Nov 2026. T0 is 12:00 UTC. The standing rule is [RULES.md](RULES.md). The reasoning is [plan/TRIES.md](plan/TRIES.md).
 >
 > **Refuse to start unless [prompts/REVIEW.md](prompts/REVIEW.md) contains the line `REVIEW_CLOSED`.** Several rounds come first. A paste before that line does not start a runner and does not pick a later hour.
 
@@ -14,7 +14,7 @@ If the operator says this machine is Mini, or the bot, stop. Do not start a runn
 
 You know you are the desk because this file was pasted here. The session name does not decide it.
 
-You send the sixteen covenant families from the start until the last payment target is met. You send the payment targets in order, including 4,053 per second, and you stay on a target until it is met. Mini counts on Mini's own node and does not send. You do not count the chain. The rest of this file is the whole test.
+You send the sixteen covenant families from the start until RETURN is met. You send the scored payment offers, and you stay on a scored offer until it is met or one pass of repairs is done. HOLD-4 is one observation minute after HOLD-3's file is on origin. The bot may send payments in that minute only. Mini counts on Mini's own node and does not send. You do not count the chain. The rest of this file is the whole test.
 
 [GO.md](GO.md) is the map. It does not start a machine. The headmaster rule is [tn-master docs/NEURON.md](https://github.com/STP-KAS/tn-master/blob/main/docs/NEURON.md).
 
@@ -54,7 +54,7 @@ After 11:20 UTC this page stays as it is.
 
 | UTC | CET | Who | What |
 |---|---|---|---|
-| 11:20 | 12:20 | operator | Desk paste and Mini paste, if review is closed and Tuesday's runner is down |
+| 11:20 | 12:20 | operator | Desk paste, Mini paste, and bot paste, if review is closed and Tuesday's runner is down |
 | 11:30 | 12:30 | Mini | Armed line on origin |
 | 11:40 | 12:40 | desk | Sixteen hashes, only if that line is on origin. Then the On origin line |
 | 11:50 | 12:50 | desk | Genesis. Sixteen families. One genesis |
@@ -67,25 +67,29 @@ The shape of a target is [plan/PLAN.md](plan/PLAN.md).
 
 ## Targets
 
-Families: **1.2 hop/s**, boson, stagger 0, from T0 until the last target is met.
+Families: **1.2 hop/s**, boson, stagger 0, from T0 until RETURN is met.
 
-Payments, in order. You open the next offer only after the current target is met.
+Payments, in order. HOLD-1, HOLD-2, HOLD-3, and RETURN are scored. HOLD-4 is one minute. It opens when HOLD-3's file is on origin, met or `NOT MET`.
 
-| Order | Offer, tx/s | File when it is met |
+| Order | Offer, tx/s | File when the step closes |
 |---:|---:|---|
 | 1 | 1,013 | HOLD-1 |
 | 2 | 2,027 | HOLD-2 |
-| 3 | 3,040 | HOLD-3 |
-| 4 | 4,053 | HOLD-4 |
+| 3 | 3,040 | HOLD-3, `MET` or `NOT MET` |
+| 4 | 4,053 | HOLD-4, `OBSERVATION` |
 | 5 | 1,013 | RETURN |
 
-A target is met after three clean minutes, as [plan/PLAN.md](plan/PLAN.md) lists them. Then publish that file and move to the next offer.
+A scored target is met after three clean minutes, as [plan/PLAN.md](plan/PLAN.md) lists them. The clean minute is your read of the submit path: synced flag true, that node's DAA moving, submit-OK within 10 percent, rejects logged as rate or full, no sender-off, pool-low, node-drop, or proc-exit, and every family still attempting. Mini's marks do not gate you.
 
-A missed minute stays on this offer. Append one line to [logs/FIXES.md](logs/README.md): the UTC time, what failed, what you changed, and why that change. Then keep going. Do not skip the target. Do not pick a new T0.
+Your payment senders use every public node that answers synced. One process per node. Skip a node that does not answer. Do not put two processes on one node. The node list stays off this repo. At HOLD-4 you keep the family nodes and at least one payment node. A node you are not using is free for the bot. You do not wait for the bot.
+
+A missed minute stays on this scored offer. Append one line to [logs/FIXES.md](logs/README.md): the UTC time, what failed, what you changed, and why that change. A repair may restart the sender, move the submit to another synced public node, or repair the builder. Each of those is tried once for that reason. Waiting is not another try. Then publish `NOT MET` if the minute is still dirty. Do not pick a new T0. HOLD-3 `NOT MET` still opens HOLD-4.
+
+The HOLD-4 sample is the first full minute your submit path is synced and its DAA is moving. Publish that minute. The rate is the reading. Do not stay open to chase 4,053.
 
 **1,026** accepted hops per family in 900 seconds is a score in the files. Report it. It does not open or close a target.
 
-Fees, sompi per gram, for the whole run: families 1–13 pay **100**. Families 14–16 pay **200**. Your payment senders pay **150**. Do not read a priority quote. A fee reject stops that sender. Leave the fee. Log the miss. Resume that sender at the same fee. Leave the others up.
+Fees, sompi per gram, for the whole run: families 1–13 pay **100**. Families 14–16 pay **200**. Your payment senders pay **150**. Do not read a priority quote. A full mempool is logged as full and does not stop that sender. A reject for the rate stops that sender. Leave the fee. Log the miss. Leave the others up.
 
 ## Hashes
 
@@ -99,13 +103,13 @@ Recount before 11:50. Abort line **2,500 coins** and **18,000 usable tKAS**. Do 
 
 This read starts one runner. It sleeps until 11:40 for the hash gate, then follows the targets. After it is up, the session can die. The runner keeps the target.
 
-You publish a file under [counts/desk/](counts/desk/README.md) when that target is met: HOLD-1, HOLD-2, HOLD-3, HOLD-4, RETURN. Each file is the offer you commanded, the attempts, and the rejects, including the minutes before the three clean ones. It is your sender log. It is not a chain count. Resolve git once when the runner starts. One commit per file. If the push fails, try once more, then stop and say the git error. You do not write [counts/mini/](counts/mini/README.md).
+You publish a file under [counts/desk/](counts/desk/README.md) when that step closes: HOLD-1, HOLD-2, HOLD-3, HOLD-4, RETURN. A scored file includes the minutes before the close, and it opens with `MET` or `NOT MET`. HOLD-4 opens with `OBSERVATION`. Each row is submit-OK, the attempts, and the rejects split into rate and full. It is your sender log. It is not a chain count. Resolve git once when the runner starts. One commit per file. If the push fails, try once more, then stop and say the git error. You do not write [counts/mini/](counts/mini/README.md) or [counts/bot/](counts/bot/README.md).
 
 The file clock is the accepting block header time. A minute you did not read in full stays marked. The gap is not filled. No txid, key, seed, address, host, port, or covenant id in the file.
 
 The desk node process is already stopped, as the arm says. Leave it stopped. Do not delete the chain data. Do not switch the binary. Do not enable an index. Miners stay off. A failed submit is a reject. Stop a sender on sender-off, pool-low, node-drop, or proc-exit.
 
-When RETURN is on origin, stop the families and the payments. Write [logs/METHOD.md](logs/README.md) and push it. Then one commit on tn-master: the index row, the history page, and the timeline line, linking that method file. Do this when the targets are met and do this if the run is stopped by the abort line with no repair left. If the tn-master push fails, say the git error and leave the local commit.
+When RETURN is on origin, met or `NOT MET`, stop the families and the payments. Write [logs/METHOD.md](logs/README.md) and push it. Then one commit on tn-master: the index row, the history page, and the timeline line, linking that method file. If the tn-master push fails, say the git error and leave the local commit.
 
 ## What Mini is doing
 
@@ -113,15 +117,17 @@ Mini counts on Mini's own node. Mini does not send, does not run genesis, and do
 
 ## The bot
 
-The bot is not a sender on this neuron. You do not wait for it, and you do not start a sender on that machine. A miss stays on your current offer.
+The bot sends payments only in the HOLD-4 minute, from its own coins, on a node you are not using. You do not start it. You do not give it your coins. You do not wait for it. If it sends nothing, your observation file still goes up.
 
 ## What you refuse
 
 - Starting without `REVIEW_CLOSED` on origin.
 - Starting while a Tuesday runner is up.
 - Inventing a new start after a missed 11:40 hash gate.
-- Skipping a payment target because a minute missed.
-- Raising an offer before its three clean minutes.
+- Leaving HOLD-3 open with no file after one repair pass.
+- Opening HOLD-4 before HOLD-3's file is on origin.
+- Chasing 4,053 past the one observation minute.
+- Bringing the bot in on a scored offer.
 - A second runner because a chat compacted.
 - Starting the desk node again before the method file is on origin.
 - Deleting the chain data.

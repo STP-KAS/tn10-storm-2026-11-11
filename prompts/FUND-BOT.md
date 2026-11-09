@@ -16,4 +16,4 @@ Do not call getUtxos on the mining address. That call drops the socket. Leave th
 
 If this machine does not already have the signer for that wallet, say so and stop. Do not create one.
 
-You do not send on this paste. You do not send covenants. You do not start a runner. [GO-BOT.md](../GO-BOT.md) also refuses to send.
+You do not send on this paste. You do not send covenants. You do not start a runner. Wednesday's [GO-BOT.md](../GO-BOT.md) sends payments in the HOLD-4 minute only.

@@ -1,6 +1,6 @@
 > **Experimental. We are just trying this.** [Disclaimer](DISCLAIMER.md) · Kaspa Testnet-10 only; tKAS has no value. Counts only.
 >
-> **Paste this on Mini only.** The desk's file is [GO-DESK.md](GO-DESK.md). The bot is not in this test. Wed 11 Nov 2026. T0 is 12:00 UTC. The standing rule is [RULES.md](RULES.md). The reasoning is [plan/TRIES.md](plan/TRIES.md).
+> **Paste this on Mini only.** The desk's file is [GO-DESK.md](GO-DESK.md). The bot's file is [GO-BOT.md](GO-BOT.md). Wed 11 Nov 2026. T0 is 12:00 UTC. The standing rule is [RULES.md](RULES.md). The reasoning is [plan/TRIES.md](plan/TRIES.md).
 >
 > **Refuse to start unless [prompts/REVIEW.md](prompts/REVIEW.md) contains the line `REVIEW_CLOSED`.** A paste before that line does not start a counter and does not pick a later hour.
 
@@ -14,7 +14,7 @@ If the operator says this machine is the desk, or the bot, stop. Do not start a 
 
 You know you are Mini because this file was pasted here. The session name does not decide it.
 
-You count on your own node. You are the only chain counter. You do not send. You do not run genesis. You do not mine. You do not hold a key. The desk sends the families from the start until the last payment target is met, and it stays on each payment offer until that target is met. The desk does not count the chain. The rest of this file is the whole test, so you can see it. You do only the Mini work.
+You count on your own node. You are the only chain counter. You do not send. You do not run genesis. You do not mine. You do not hold a key. The desk sends the families and the scored offers. The bot may send payments in the HOLD-4 minute only. The desk does not count the chain. The rest of this file is the whole test, so you can see it. You do only the Mini work.
 
 [GO.md](GO.md) is the map. It does not start a machine.
 
@@ -46,7 +46,7 @@ After 11:20 UTC this page stays as it is.
 
 **T0** is **12:00 UTC (13:00 CET)**. Your counter goes on at **11:55 UTC**. You count until the desk's RETURN file is on origin. There is no count-off clock.
 
-You publish one file when the desk's matching file is on origin. The minutes in your file run from the minute that offer opened through the three clean minutes. The desk does the sends.
+You publish one file when the desk's matching file is on origin, including a HOLD-3 file that says `NOT MET`. The minutes in a scored file run from the minute that offer opened through the close. HOLD-4 is the one sample minute. On that minute you write `TWO SENDERS` only when the bot's file shows it submitted. Otherwise you write `ONE SENDER`. The desk does the scored sends.
 
 | Offer | Your file |
 |---:|---|
@@ -56,7 +56,7 @@ You publish one file when the desk's matching file is on origin. The minutes in 
 | 4,053 tx/s | [counts/mini/HOLD-4.md](counts/mini/README.md) |
 | 1,013 tx/s, again | [counts/mini/RETURN.md](counts/mini/README.md) |
 
-You do not invent a skip. A target the desk has not met stays open. You keep counting it.
+You do not invent a skip. You do not close a step the desk has left open. When the desk's file is on origin, you publish yours.
 
 The offer table, the fees, and the meaning of met are in [plan/PLAN.md](plan/PLAN.md). You do not send any of it.
 
@@ -84,6 +84,7 @@ No txid, key, seed, address, host, port, or covenant id in the file. The accepti
 - Sending, mining, genesis, or holding a key.
 - A second runner.
 - A new start if the 11:30 armed line was late. Say the git error. The desk will stop at 11:40.
-- Closing a target the desk has not met.
+- Closing a step the desk has left open.
+- Adding the bot's rows into your count.
 - Filling a gap you did not read.
 - Writing the desk's folder, or the Tuesday repo, from this paste.

@@ -21,36 +21,37 @@ One story. One file for each computer. Paste the file that names the machine in 
 | **bot, for the review** | [prompts/REVIEW.md](prompts/REVIEW.md) | GROKBOT. I review. I do not send. | before Wednesday, and not during Tuesday's window |
 | **desk** | [GO-DESK.md](GO-DESK.md) | DESK. I send. I do not count. | Wed 11 Nov, 11:20 UTC, after `REVIEW_CLOSED` |
 | **Mini** | [GO-MINI.md](GO-MINI.md) | MINI. I count. I do not send. | the same minute |
+| **bot, Wednesday** | [GO-BOT.md](GO-BOT.md) | GROKBOT. I send payments on HOLD-4 only. I do not count. | the same minute |
 
 Each go file is the whole plan. Grok Build does not guess the machine from its own name. The pasted file is the machine. [GO.md](GO.md) is the map. It does not start a session.
 
-The operator writes `REVIEW_CLOSED` when this shape is the one he wants. The bot does not write that line. A Wednesday paste before that line refuses to start, and it does not pick a later hour. The bot is not a sender. [GO-BOT.md](GO-BOT.md) refuses to start one.
+The operator writes `REVIEW_CLOSED` when this shape is the one he wants. The bot does not write that line. A Wednesday paste before that line refuses to start, and it does not pick a later hour. The bot sends payments only in the HOLD-4 minute.
 
 ## Clock
 
-Times are UTC first. Desk local is CET (UTC+1). The timed steps are the start and the hash launch. After T0 the run follows targets. It stays on a target until that target is met.
+Times are UTC first. Desk local is CET (UTC+1). The timed steps are the start and the hash launch. After T0 the run follows targets. A scored target stays until it is met or one repair pass is done. HOLD-4 is one minute.
 
 | | UTC | CET |
 |---|---|---|
 | Tuesday's File 1 is due, in the Tuesday repo | 11:00 | 12:00 |
-| Operator sends the desk paste and the Mini paste, if review is closed and Tuesday's runner is down | **11:20** | **12:20** |
+| Operator sends the desk paste, the Mini paste, and the bot paste, if review is closed and Tuesday's runner is down | **11:20** | **12:20** |
 | Mini's armed line on origin | **11:30** | **12:30** |
 | Sixteen hashes proved, or the desk stops | **11:40** | **12:40** |
 | Genesis | 11:50 | 12:50 |
 | Mini's count on | 11:55 | 12:55 |
 | **START (T0).** Families on. Payments at one third | **12:00** | **13:00** |
 
-The targets are one third, two thirds, three thirds, four thirds, then one third again. They are in [plan/PLAN.md](plan/PLAN.md). The same start is in the desk paste and the Mini paste. There is no latest minute after T0.
+The targets are one third, two thirds, three thirds, one observation minute at four thirds, then one third again. They are in [plan/PLAN.md](plan/PLAN.md). The same start is in the desk paste, the Mini paste, and the bot paste. There is no latest minute after T0.
 
 ## What and why
 
-**What.** Sixteen covenant families, on from T0 until the last payment target is met. Offer 1.2 hop/s per family. Boson. Stagger 0. Families 1–13 pay 100 sompi/gram. Families 14–16 pay 200. Payment senders pay 150. The payment targets are 1,013 tx/s, then 2,027, then 3,040, then 4,053, then 1,013 again. The desk sends all of it and stays on a target until three clean minutes land. A miss is logged and repaired on that same offer. Mini is the only chain counter. The desk node process is stopped for the send, after Tuesday's runner is down, and the senders use public TN10 nodes. The chain data stays. The bot stays out. Miners stay off.
+**What.** Sixteen covenant families, on from T0 until RETURN is met. Offer 1.2 hop/s per family. Boson. Stagger 0. Families 1–13 pay 100 sompi/gram. Families 14–16 pay 200. Payment senders pay 150. The scored offers are 1,013 tx/s, then 2,027, then 3,040, then 1,013 again. Each is three clean minutes of submit-OK within 10 percent, or it closes `NOT MET` after one repair pass. HOLD-4 is one observation minute at 4,053. The desk sends the families and every payment offer. The bot sends payments only in that minute, on a public node the desk is not using. Mini is the only chain counter. The desk node process is stopped for the send, after Tuesday's runner is down. The chain data stays. Miners stay off. The operator writes the time they go off.
 
 **Why.** The full why is [WHY.md](WHY.md). The mass-ceiling line used here is 3,040 payments per second. Sixteen is the largest mix whose confirm reading cleared 1,026 hops per family in 900 seconds.
 
 ## Review
 
-The bot stays out of this test. Its machine freezes. [GO-BOT.md](GO-BOT.md) does not start a sender. A review file, if one is still wanted on another day, is [prompts/REVIEW.md](prompts/REVIEW.md). Do not paste it during Tuesday 18:20–22:15 UTC. A review round is a file in this repo. It is not a load.
+The review paste does not send. [prompts/REVIEW.md](prompts/REVIEW.md) is that paste. Do not paste it during Tuesday 18:20–22:15 UTC. A review round is a file in this repo. It is not a load. Wednesday's bot paste is [GO-BOT.md](GO-BOT.md). It sends payments only in the HOLD-4 minute.
 
 ## Map
 
@@ -63,7 +64,7 @@ The bot stays out of this test. Its machine freezes. [GO-BOT.md](GO-BOT.md) does
 | [GO.md](GO.md) | Map of the pastes. Does not start a machine |
 | [GO-DESK.md](GO-DESK.md) | Desk paste |
 | [GO-MINI.md](GO-MINI.md) | Mini paste |
-| [GO-BOT.md](GO-BOT.md) | Bot paste. It refuses to send |
+| [GO-BOT.md](GO-BOT.md) | Bot paste. Payments on HOLD-4 only |
 | [plan/TRIES.md](plan/TRIES.md) | Why try 1 is shaped this way, and why more runs are expected |
 | [prompts/REVIEW.md](prompts/REVIEW.md) | Bot paste for the review. This is the one to send first |
 | [go/README.md](go/README.md) | Which paste goes on which computer |
@@ -73,6 +74,7 @@ The bot stays out of this test. Its machine freezes. [GO-BOT.md](GO-BOT.md) does
 | [hashes/README.md](hashes/README.md) | One hash file. Absent until the desk runner writes it |
 | [counts/desk/README.md](counts/desk/README.md) | The desk's phase files |
 | [counts/mini/README.md](counts/mini/README.md) | Mini's phase files |
-| [logs/README.md](logs/README.md) | The armed line, the fix log, and the method file |
+| [counts/bot/README.md](counts/bot/README.md) | The bot's HOLD-4 sender log |
+| [logs/README.md](logs/README.md) | The armed line, the fix log, the halt line, and the method file |
 
 Counts only. No key, seed, txid, covenant id, address, host or port in this repo.

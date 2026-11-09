@@ -4,7 +4,7 @@
 
 # Mini counts
 
-Five targets. Mini publishes each one when it is met. Mini is the only chain counter. The chat does not.
+Five steps. Mini publishes each one when the desk's matching file is on origin, including a HOLD-3 file that says `NOT MET`. Mini is the only chain counter. The chat does not. On HOLD-4, a minute is `TWO SENDERS` only when the bot submitted in it. Otherwise it is `ONE SENDER`.
 
 | File | Target |
 |---|---|

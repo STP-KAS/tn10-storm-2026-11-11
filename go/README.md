@@ -8,6 +8,6 @@ The pastes live at the root, so the first sentence is the first thing a session 
 |---|---|---|
 | desk | [GO-DESK.md](../GO-DESK.md) | none |
 | Mini | [GO-MINI.md](../GO-MINI.md) | none |
-| bot | [GO-BOT.md](../GO-BOT.md) refuses to send | [prompts/REVIEW.md](../prompts/REVIEW.md) also refuses to send. The bot is not in this test |
+| bot | [GO-BOT.md](../GO-BOT.md) sends payments on HOLD-4 only | [prompts/REVIEW.md](../prompts/REVIEW.md) reviews. It does not send |
 
 [GO.md](../GO.md) is the map.

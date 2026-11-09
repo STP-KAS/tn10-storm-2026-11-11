@@ -14,23 +14,25 @@ Families 1–13 and families 14–16 are two cohorts in every file. The score is
 
 ## A payment
 
-The desk file records the offer the desk commanded, the attempts, and the rejects, as counts per minute. It is the sender log. It is not a chain count.
+The desk file records submit-OK, the attempts, and the rejects, as counts per minute. Rejects are split into rate and full. It is the sender log. It is not a chain count. A scored file opens with `MET` or `NOT MET`. The HOLD-4 file opens with `OBSERVATION`.
 
-Mini's file is the chain count. It counts accepted hops and the non-coinbase transactions the Mini node accepted in the minute. That number includes base load. It is the only chain reading on try 1. It is not averaged with the desk.
+Mini's file is the chain count. It counts accepted hops and the non-coinbase transactions the Mini node accepted in the minute. That number includes base load. It is the only chain reading on try 1. It is not averaged with the desk or the bot. On a HOLD-4 minute, Mini writes `TWO SENDERS` only when the bot submitted in that minute. Otherwise it writes `ONE SENDER`.
+
+The bot file records the bot's own submit-OK, attempts, and rejects for that one minute. If the bot did not send, the line is `NO SEND` and one word: `no-free-node`, `suspend`, `coins-short`, or `halt`. It is not added to Mini's count.
 
 A minute not read in full stays marked. The gap is not filled. Hops and payments after a phase are listed apart, under the next file if they fall in it.
 
 ## Where the files go
 
-| Target | Desk | Mini |
-|---|---|---|
-| One third, first | counts/desk/HOLD-1.md | counts/mini/HOLD-1.md |
-| Two thirds | counts/desk/HOLD-2.md | counts/mini/HOLD-2.md |
-| Three thirds | counts/desk/HOLD-3.md | counts/mini/HOLD-3.md |
-| Four thirds | counts/desk/HOLD-4.md | counts/mini/HOLD-4.md |
-| One third, again | counts/desk/RETURN.md | counts/mini/RETURN.md |
+| Target | Desk | Mini | Bot |
+|---|---|---|---|
+| One third, first | counts/desk/HOLD-1.md | counts/mini/HOLD-1.md | |
+| Two thirds | counts/desk/HOLD-2.md | counts/mini/HOLD-2.md | |
+| Three thirds | counts/desk/HOLD-3.md | counts/mini/HOLD-3.md | |
+| Four thirds, one minute | counts/desk/HOLD-4.md | counts/mini/HOLD-4.md | counts/bot/HOLD-4.md |
+| One third, again | counts/desk/RETURN.md | counts/mini/RETURN.md | |
 
-Each runner publishes its own file when that target is met. One commit. The other machine's folder stays untouched. The minutes before the three clean ones stay in the same file.
+Each runner publishes its own file when that step closes. One commit. The other machine's folder stays untouched. On a scored step, the minutes before the three clean ones stay in the same file. HOLD-4 is the one sample minute.
 
 ## When the targets are met
 

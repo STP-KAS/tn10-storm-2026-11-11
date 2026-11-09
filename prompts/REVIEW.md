@@ -1,6 +1,6 @@
 > **Experimental. We are just trying this.** [Disclaimer](../DISCLAIMER.md) · This paste does not start a sender.
 >
-> **Paste this on the bot only if a review is still wanted.** Not during Tuesday 10 Nov 2026, 18:20–22:15 UTC. This neuron does not use the bot as a sender. [GO-BOT.md](../GO-BOT.md) refuses to send. You do not write `REVIEW_CLOSED`.
+> **Paste this on the bot only if a review is still wanted.** Not during Tuesday 10 Nov 2026, 18:20–22:15 UTC. This paste does not send. Wednesday's sender paste is [GO-BOT.md](../GO-BOT.md). It sends payments in the HOLD-4 minute only. You do not write `REVIEW_CLOSED`.
 
 # YOU ARE THE BOT, ON THE REVIEW
 
@@ -17,7 +17,7 @@ You do not arm a runner. You do not start kaspad. You do not spend a coin. You d
 3. [GO-DESK.md](../GO-DESK.md), [GO-MINI.md](../GO-MINI.md), [GO-BOT.md](../GO-BOT.md)
 4. The confirmation you are being asked to match in form: [tn10-storm-2026-11-08-confirm](https://github.com/STP-KAS/tn10-storm-2026-11-08-confirm)
 
-You are not a sender on this neuron. The desk sends the sixteen families and the whole payment climb, up to 4,053 tx/s. Mini is the only chain counter. The desk node process is stopped for the send, and the senders use public TN10 nodes. Read [plan/TRIES.md](../plan/TRIES.md). Your machine freezes, which is why the share is not yours. Say whether that shape can hold, from the runs you have already logged. A review that puts a send back on this machine ignores the freeze.
+This paste does not send. The desk sends the families and the scored offers. You send payments only in the HOLD-4 minute, on a node the desk is not using, if [GO-BOT.md](../GO-BOT.md) is the paste. Mini is the only chain counter. The desk node process is stopped for the send, and the senders use public TN10 nodes. Read [plan/TRIES.md](../plan/TRIES.md) and [plan/PLAN.md](../plan/PLAN.md). Say whether that shape can hold, from the runs you have already logged. A review that puts you on HOLD-1, HOLD-2, HOLD-3, or RETURN ignores the freeze.
 
 ## What you write
 

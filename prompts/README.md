@@ -9,6 +9,6 @@
 | [REVIEW.md](REVIEW.md) | bot | before Tuesday 18:00 UTC, or after Tuesday's runner exits and before Wednesday 11:00 UTC | GROKBOT. I review. I do not send. |
 | [../GO-DESK.md](../GO-DESK.md) | desk | Wed 11 Nov 2026, 11:20 UTC, after `REVIEW_CLOSED` | DESK. I send. I do not count. |
 | [../GO-MINI.md](../GO-MINI.md) | Mini | the same minute | MINI. I count. I do not send. |
-| [../GO-BOT.md](../GO-BOT.md) | bot | any time | GROKBOT. I do not send. |
+| [../GO-BOT.md](../GO-BOT.md) | bot | Wed 11 Nov 2026, 11:20 UTC, after `REVIEW_CLOSED` | GROKBOT. I send payments on HOLD-4 only. I do not count. |
 
-`REVIEW_CLOSED` is the operator's line. Until that line is on origin, the Wednesday pastes refuse to start. The bot is not a sender on this neuron. The reasoning is [../plan/TRIES.md](../plan/TRIES.md).
+`REVIEW_CLOSED` is the operator's line. Until that line is on origin, the Wednesday pastes refuse to start. The bot sends payments only in the HOLD-4 minute. The reasoning is [../plan/TRIES.md](../plan/TRIES.md).

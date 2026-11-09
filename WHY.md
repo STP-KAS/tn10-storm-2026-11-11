@@ -4,7 +4,7 @@
 
 The quiet covenant runs and the payment floods have been separate nights. This neuron runs them together, from one start, until every payment target is met.
 
-Sixteen covenant families stay on from the first second until the last target is met. The payment offer climbs one third, two thirds, three thirds, and four thirds of the mass-ceiling line, then returns to one third. A target stays open until it is met. The families are still hopping through that return.
+Sixteen covenant families stay on from the first second until RETURN is met. The payment offer climbs one third, two thirds, and three thirds as scored targets, then one observation minute at four thirds, then returns to one third. A scored target stays open until it is met, or until one pass of repairs is done. The families are still hopping through the observation and the return.
 
 ## What was read
 
@@ -20,7 +20,7 @@ The running TN10 node stays the binary it is already on. This plan does not swit
 |---|---:|---|
 | Mass ceiling, low edge | 3,040 payments/s | [FINDINGS 1](https://github.com/STP-KAS/tn-master/blob/main/FINDINGS.md) |
 | 11 Oct peak complete minute | 3,583.1 tx/s | [FINDINGS 10](https://github.com/STP-KAS/tn-master/blob/main/FINDINGS.md). A peak minute. The offer is not scaled from it |
-| Desk payment hold, 6–7 Oct | 2,207 tx/s seen accepted for 6 h | [tn-master README](https://github.com/STP-KAS/tn-master/blob/main/README.md) |
+| Desk payment hold, 6–7 Oct | 2,207 tx/s seen accepted for 6 h, twelve signers on public nodes, desk node took no traffic | [10-06 README](https://github.com/STP-KAS/tn10-storm-2026-10-06/blob/main/README.md) |
 | Eight families, offer 1.2, cleared 1.14 | slowest about 1.26 hop/s | [FINDINGS 19](https://github.com/STP-KAS/tn-master/blob/main/FINDINGS.md) |
 | Sixteen families, confirm desk reading | mean 1,111.1 over 900 s, every family above 1,026 | [confirm method](https://github.com/STP-KAS/tn10-storm-2026-11-08-confirm/blob/main/logs/METHOD.md) |
 | Thirty-two families | under 1.14 per family on a quiet network | [FINDINGS 19](https://github.com/STP-KAS/tn-master/blob/main/FINDINGS.md) and the confirm load |
@@ -40,17 +40,19 @@ Three rates, fixed for the whole run.
 
 Three of sixteen is the largest whole share that stays at or under one fifth. The score is accepted hops and accepted payments for each rate. A higher rate is a cohort in the file. It is not a promise that those transactions leave the mempool.
 
+Label C. Payments at 150 sit between families at 100 and families at 200. A yes for families 14–16 ahead of families 1–13, on HOLD-3 or in the HOLD-4 minute, is mostly that fee order. The 6 Oct saturated hold bought about 2 seconds at the median for 1.5×. The tail did not move.
+
 The node's priority bucket is not read. [FINDINGS 11](https://github.com/STP-KAS/tn-master/blob/main/FINDINGS.md) records a stale mempool quoting 1,644 sompi/gram against a public 100. [FINDINGS 13](https://github.com/STP-KAS/tn-master/blob/main/FINDINGS.md) records that 100× bought nothing more than 10×, and that 150× raised storage mass and lowered throughput.
 
 ## What this neuron asks
 
-On a network that is offered 1,013, then 2,027, then 3,040, then 4,053 simple payments per second, do the sixteen families still land, and do families 14–16 land ahead of families 1–13?
+On a network that is offered 1,013, then 2,027, then 3,040, then one minute at 4,053, then 1,013 again, do the sixteen families still land, and do families 14–16 land ahead of families 1–13?
 
-The run stays on an offer until three clean minutes land. Then the next offer starts. After 4,053, the offer returns to 1,013 and the families stay on until that target is met. There is no latest minute after the start.
+HOLD-3 and the one minute at 4,053 are overload steps. Finding 1 says submitting faster than 3,040 to 3,080 fills mempools. A scored target is three clean minutes of submit-OK within 10 percent of the offer. The 4,053 step is one minute. The rate in that minute is the reading. It does not have to land 4,053. There is no latest minute after the start.
 
 ## Who sends
 
-The desk is the only sender. Mini is the only chain counter. The bot stays out of this neuron. The desk node process is stopped for the send, after Tuesday's runner is down, and the senders use public TN10 nodes. The chain data stays. The log is [plan/TRIES.md](plan/TRIES.md). This clock is try 1. Pulse is not asked to count it.
+The desk sends the families and the scored payment offers. Mini is the only chain counter. The bot sends payments only in the 4,053 minute, and only on a public node the desk is not using. The desk node process is stopped for the send, after Tuesday's runner is down, and the senders use public TN10 nodes. The chain data stays. The log is [plan/TRIES.md](plan/TRIES.md). This clock is try 1. Pulse is not asked to count it.
 
 ## What stays on its own clock
 
