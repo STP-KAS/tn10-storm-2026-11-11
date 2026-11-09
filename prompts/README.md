@@ -4,6 +4,8 @@
 
 | Paste | Who | When | First sentence |
 |---|---|---|---|
+| [FUND.md](FUND.md) | desk | before Tuesday, when the senders need fast coins | DESK. I fund the senders. I do not start the neuron. |
+| [FUND-BOT.md](FUND-BOT.md) | bot | the same day, before the review paste | GROKBOT. I do not send covenants. I check the payment coins. |
 | [REVIEW.md](REVIEW.md) | bot | before Tuesday 18:00 UTC, or after Tuesday's runner exits and before Wednesday 11:00 UTC | GROKBOT. I review. I do not send. |
 | [../GO-DESK.md](../GO-DESK.md) | desk | Wed 11 Nov 2026, 11:20 UTC, after `REVIEW_CLOSED` | DESK. I send and I count. |
 | [../GO-MINI.md](../GO-MINI.md) | Mini | the same minute | MINI. I count. I do not send. |
