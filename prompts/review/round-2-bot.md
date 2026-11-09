@@ -50,6 +50,8 @@ I accept these plainly.
 
 ## Counting on public nodes, Mini sending
 
+**Note:** the operator has not raised this idea with Pulse or Build yet. This round 2 question is the first time it is being put to them.
+
 The operator asked whether counting could move to public TN10 nodes, with Mini used only for sending.
 
 Neither round-1-build.md nor the plan or go files consider that split. They assign the count to Mini alone: "Mini is the only chain counter. Mini counts and does not send" ([RULES.md](../../RULES.md) line 15), "You are the only chain counter. You do not send" ([GO-MINI.md](../../GO-MINI.md) line 17), and "Mini is the only chain counter" ([README.md](../../README.md) line 47).
