@@ -10,21 +10,19 @@ This repo is one neuron. It is not a restart of Tuesday and not a restart of the
 
 ## Who publishes
 
-The desk sends the sixteen families for the whole clock and sends the whole payment climb. The desk runner publishes one file under [counts/desk/](counts/desk/README.md) when each phase closes. That file is the offer, the attempts, and the rejects. It is the sender log. It is not a chain count.
+The desk sends the sixteen families until the last payment target is met, and sends the whole payment climb. The desk runner publishes one file under [counts/desk/](counts/desk/README.md) when each target is met. That file is the offer, the attempts, and the rejects. It is the sender log. It is not a chain count.
 
 Mini is the only chain counter. Mini counts and does not send. Mini's runner publishes the same phases under [counts/mini/](counts/mini/README.md). Each machine writes only its own folder. The chat does not publish either folder. The bot does not write them and does not send.
 
 | File | What it covers |
 |---|---|
-| QUIET.md | 11:55 UTC until the quiet phase ends |
-| HOLD-1.md | the one-third offer, from the command through the hold or the short |
+| HOLD-1.md | the first one-third offer, from the open through the three clean minutes |
 | HOLD-2.md | two thirds |
 | HOLD-3.md | three thirds |
 | HOLD-4.md | four thirds |
-| DOWN.md | the step back to one third |
-| RECOVERY.md | two hours at one third, families still on |
+| RETURN.md | one third again, families still on, through its three clean minutes |
 
-A skipped phase is still a file. The file is one line: `SKIP`, the UTC time, and the reason. The runner pushes it.
+A target that is not met yet has no file. The runner does not skip it.
 
 A hop is in the file when the accepting block's header time is inside that phase. The row does not carry a txid, a key, a seed, an address, a host, a port, or a covenant id. The family label and the cohort, floor or double, may sit on the row. The accepting block hash may sit on the row. A minute that was not read in full stays marked. The gap is not filled. The two readings are not averaged.
 
@@ -32,7 +30,7 @@ A hop is in the file when the accepting block's header time is inside that phase
 
 The desk writes [hashes/SIXTEEN.md](hashes/README.md) before the 12:00 UTC send. Fixed is the local write time. On origin is the commit time of the commit that put the rows on GitHub. After that push succeeds, the same runner reads the time from origin and writes it into the file, then pushes that one line. The time comes from origin. A file with rows and no On origin line is not proof. No proved file, no send.
 
-One genesis. The same sixteen families run until recovery ends. A later phase does not publish a second hash file and does not spend a new genesis coin.
+One genesis. The same sixteen families run until the last target is met. A later target does not publish a second hash file and does not spend a new genesis coin.
 
 ## Git
 
@@ -48,10 +46,10 @@ The pastes also wait for the line `REVIEW_CLOSED` in [prompts/REVIEW.md](prompts
 
 ## This clock
 
-The day is Wed 11 Nov 2026. Start is 12:00 UTC (13:00 CET). A phase that has not opened by the latest minute in [plan/PLAN.md](plan/PLAN.md) is skipped. The clock is not moved. Recovery's latest start is 16:30 UTC. The publish is finished by 18:45 UTC.
+The day is Wed 11 Nov 2026. Start is 12:00 UTC (13:00 CET). The hash launch before that start is timed. After the start, the run follows the targets in [plan/PLAN.md](plan/PLAN.md). It stays on a target until that target is met. The start is not moved.
 
-## When the clock closes
+## When the targets are met
 
-The desk runner writes [logs/METHOD.md](logs/README.md). Success and failure both get that file. The same runner then updates tn-master in the same hour: the index row, the history page, and the timeline line, linking this method file. The plan pages and the pastes stay as they were at 11:20 UTC. A miss is a row. The row is not removed.
+The desk runner writes [logs/METHOD.md](logs/README.md) when RETURN is on origin, and also if the run stops with no repair left. The same runner then updates tn-master: the index row, the history page, and the timeline line, linking that method file. The plan pages and the pastes stay as they were at 11:20 UTC. A miss is a row. The row is not removed. Fixes made during the run are [logs/FIXES.md](logs/README.md).
 
 If that tn-master push fails, say the git error. Leave the local commit. Do not start another runner to finish the sentence.

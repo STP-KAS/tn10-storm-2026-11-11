@@ -4,16 +4,14 @@
 
 # Mini counts
 
-The same seven phases. Mini publishes each one. Mini is the only chain counter. The chat does not.
+Five targets. Mini publishes each one when it is met. Mini is the only chain counter. The chat does not.
 
-| File | Phase |
+| File | Target |
 |---|---|
-| QUIET.md | quiet |
-| HOLD-1.md | one third |
+| HOLD-1.md | one third, first |
 | HOLD-2.md | two thirds |
 | HOLD-3.md | three thirds |
 | HOLD-4.md | four thirds |
-| DOWN.md | step-down |
-| RECOVERY.md | recovery |
+| RETURN.md | one third, again |
 
 Mini's non-coinbase count includes base load. It is the chain reading. The rule is [plan/COUNT.md](../../plan/COUNT.md).

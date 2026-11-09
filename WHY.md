@@ -2,9 +2,9 @@
 
 # Why this neuron
 
-The quiet covenant runs and the payment floods have been separate nights. This neuron runs them on one clock.
+The quiet covenant runs and the payment floods have been separate nights. This neuron runs them together, from one start, until every payment target is met.
 
-Sixteen covenant families stay on from the first second through a two-hour recovery. The payment offer climbs one third, two thirds, three thirds, and four thirds of the mass-ceiling line, holds thirty minutes when a step is stable, then steps back to one third. The families are still hopping during that recovery.
+Sixteen covenant families stay on from the first second until the last target is met. The payment offer climbs one third, two thirds, three thirds, and four thirds of the mass-ceiling line, then returns to one third. A target stays open until it is met. The families are still hopping through that return.
 
 ## What was read
 
@@ -30,7 +30,7 @@ Thirty-two families already miss 1.14 while the network is quiet. They stay on T
 
 ## Fees
 
-Three rates, fixed for the whole clock, including the quiet phase and the recovery.
+Three rates, fixed for the whole run.
 
 | Who | Rate | Sompi per gram |
 |---|---:|---:|
@@ -46,11 +46,11 @@ The node's priority bucket is not read. [FINDINGS 11](https://github.com/STP-KAS
 
 On a network that is offered 1,013, then 2,027, then 3,040, then 4,053 simple payments per second, do the sixteen families still land, and do families 14–16 land ahead of families 1–13?
 
-After the top hold, the payment offer steps back to 1,013 and the families keep hopping for two hours. That window is the recovery.
+The run stays on an offer until three clean minutes land. Then the next offer starts. After 4,053, the offer returns to 1,013 and the families stay on until that target is met. There is no latest minute after the start.
 
 ## Who sends
 
-The desk is the only sender. Mini is the only chain counter. The bot stays out of this neuron. The desk node process is stopped for the send window, after Tuesday's runner is down, and the senders use public TN10 nodes. The chain data stays. The log is [plan/TRIES.md](plan/TRIES.md). This clock is try 1. Pulse is not asked to count it.
+The desk is the only sender. Mini is the only chain counter. The bot stays out of this neuron. The desk node process is stopped for the send, after Tuesday's runner is down, and the senders use public TN10 nodes. The chain data stays. The log is [plan/TRIES.md](plan/TRIES.md). This clock is try 1. Pulse is not asked to count it.
 
 ## What stays on its own clock
 

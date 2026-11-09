@@ -14,7 +14,7 @@ The pattern is [tn10-storm-2026-11-08-confirm BENCHMARK.md](https://github.com/S
 - The desk publishes its sender log under `counts/desk/`. Mini publishes the chain count under `counts/mini/`. The bot writes neither folder.
 - Sixteen hashes, with an On origin line, before the 12:00 UTC send. One genesis for the whole neuron.
 - The covenant offer stays 1.2 hop/s per family. The abort line stays 2,500 coins and 18,000 usable tKAS.
-- The payment offers are 1,013, then 2,027, then 3,040, then 4,053 tx/s. Those are one third, two thirds, three thirds, and four thirds of 3,040.
+- The payment offers are 1,013, then 2,027, then 3,040, then 4,053 tx/s, then 1,013 again. Those are one third, two thirds, three thirds, four thirds, and the return to one third. A target stays open until three clean minutes land. After the start there is no latest minute.
 - Fees are fixed multiples of the minimum relay. They are not a node's priority quote.
 
 Tuesday 10 Nov 2026 stays [tn10-storm-2026-11-10](https://github.com/STP-KAS/tn10-storm-2026-11-10). This page does not arm that repo.

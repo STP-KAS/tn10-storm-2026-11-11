@@ -14,7 +14,7 @@ If the operator says this machine is the desk, or the bot, stop. Do not start a 
 
 You know you are Mini because this file was pasted here. The session name does not decide it.
 
-You count on your own node. You are the only chain counter. You do not send. You do not run genesis. You do not mine. You do not hold a key. The desk sends the families and the whole payment climb, including 4,053 per second. The desk does not count the chain. The rest of this file is the whole test, so you can see it. You do only the Mini work.
+You count on your own node. You are the only chain counter. You do not send. You do not run genesis. You do not mine. You do not hold a key. The desk sends the families from the start until the last payment target is met, and it stays on each payment offer until that target is met. The desk does not count the chain. The rest of this file is the whole test, so you can see it. You do only the Mini work.
 
 [GO.md](GO.md) is the map. It does not start a machine.
 
@@ -42,40 +42,35 @@ If a session compacts, leave the runner alone. A second runner is a fault.
 
 After 11:20 UTC this page stays as it is.
 
-## The whole clock
+## The start, then the targets
 
-You count every phase below. You publish one file at the end of each phase. The desk does the sends.
+**T0** is **12:00 UTC (13:00 CET)**. Your counter goes on at **11:55 UTC**. You count until the desk's RETURN file is on origin. There is no count-off clock.
 
-| UTC | CET | What you count |
-|---|---|---|
-| 11:55 | 12:55 | Counter on. Quiet phase |
-| 12:00 | 13:00 | T0. Sixteen families begin on the desk |
-| by 13:00 | by 14:00 | Quiet ends. Publish QUIET.md |
-| next, latest 13:00 | | One third, 1,013 tx/s, then a 30-minute hold if it becomes stable. Publish HOLD-1.md |
-| latest 13:50 | | Two thirds, 2,027 tx/s. Publish HOLD-2.md |
-| latest 14:40 | | Three thirds, 3,040 tx/s. Publish HOLD-3.md |
-| latest 15:30 | | Four thirds, 4,053 tx/s. Publish HOLD-4.md |
-| latest 16:20 | | Step-down to 1,013. Publish DOWN.md |
-| latest 16:30 | | Recovery, two hours, families still on, payments at 1,013. Publish RECOVERY.md |
-| 18:45 | 19:45 | Your last file is on origin |
+You publish one file when the desk's matching file is on origin. The minutes in your file run from the minute that offer opened through the three clean minutes. The desk does the sends.
 
-A phase the desk skips is still your file. One line: `SKIP`, the UTC time, and the reason you read from the desk's file on origin. You do not invent a skip the desk did not write.
+| Offer | Your file |
+|---:|---|
+| 1,013 tx/s, first | [counts/mini/HOLD-1.md](counts/mini/README.md) |
+| 2,027 tx/s | [counts/mini/HOLD-2.md](counts/mini/README.md) |
+| 3,040 tx/s | [counts/mini/HOLD-3.md](counts/mini/README.md) |
+| 4,053 tx/s | [counts/mini/HOLD-4.md](counts/mini/README.md) |
+| 1,013 tx/s, again | [counts/mini/RETURN.md](counts/mini/README.md) |
 
-The offer table, the fees, and the meaning of stable are in [plan/PLAN.md](plan/PLAN.md). You do not send any of it.
+You do not invent a skip. A target the desk has not met stays open. You keep counting it.
+
+The offer table, the fees, and the meaning of met are in [plan/PLAN.md](plan/PLAN.md). You do not send any of it.
 
 ## What you publish
 
 Call git by its full path. Resolve it once when the runner starts. Empty output is a failed read. Read once more. If that fails, stop and say so. The local file stays.
 
-| File | Phase |
+| File | Target |
 |---|---|
-| [counts/mini/QUIET.md](counts/mini/README.md) | quiet |
-| [counts/mini/HOLD-1.md](counts/mini/README.md) | one third |
+| [counts/mini/HOLD-1.md](counts/mini/README.md) | one third, first |
 | [counts/mini/HOLD-2.md](counts/mini/README.md) | two thirds |
 | [counts/mini/HOLD-3.md](counts/mini/README.md) | three thirds |
 | [counts/mini/HOLD-4.md](counts/mini/README.md) | four thirds |
-| [counts/mini/DOWN.md](counts/mini/README.md) | step-down |
-| [counts/mini/RECOVERY.md](counts/mini/README.md) | recovery |
+| [counts/mini/RETURN.md](counts/mini/README.md) | one third, again |
 
 One commit per file. Push. If the push fails, try once more, then stop and say the git error.
 
@@ -88,6 +83,7 @@ No txid, key, seed, address, host, port, or covenant id in the file. The accepti
 - Starting without `REVIEW_CLOSED` on origin.
 - Sending, mining, genesis, or holding a key.
 - A second runner.
-- A new clock if the 11:30 armed line was late. Say the git error. The desk will stop at 11:40.
+- A new start if the 11:30 armed line was late. Say the git error. The desk will stop at 11:40.
+- Closing a target the desk has not met.
 - Filling a gap you did not read.
 - Writing the desk's folder, or the Tuesday repo, from this paste.

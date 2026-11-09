@@ -28,7 +28,7 @@ The operator writes `REVIEW_CLOSED` when this shape is the one he wants. The bot
 
 ## Clock
 
-Times are UTC first. Desk local is CET (UTC+1). The quiet phase ends when its goal is met, or at 13:00 UTC. Later phases start when the previous one closes, and not after the latest minute.
+Times are UTC first. Desk local is CET (UTC+1). The timed steps are the start and the hash launch. After T0 the run follows targets. It stays on a target until that target is met.
 
 | | UTC | CET |
 |---|---|---|
@@ -37,18 +37,14 @@ Times are UTC first. Desk local is CET (UTC+1). The quiet phase ends when its go
 | Mini's armed line on origin | **11:30** | **12:30** |
 | Sixteen hashes proved, or the desk stops | **11:40** | **12:40** |
 | Genesis | 11:50 | 12:50 |
-| Counts on | 11:55 | 12:55 |
-| **START (T0).** Sixteen families, all on | **12:00** | **13:00** |
-| Quiet phase latest end | 13:00 | 14:00 |
-| Recovery latest start | **16:30** | **17:30** |
-| Recovery ends if it started at 16:30 | 18:30 | 19:30 |
-| Mini's counts and the method file are on origin, tn-master updated | **18:45** | **19:45** |
+| Mini's count on | 11:55 | 12:55 |
+| **START (T0).** Families on. Payments at one third | **12:00** | **13:00** |
 
-The steps, the offers, and the latest minute of each phase are in [plan/PLAN.md](plan/PLAN.md). The same clock is in the desk paste and the Mini paste.
+The targets are one third, two thirds, three thirds, four thirds, then one third again. They are in [plan/PLAN.md](plan/PLAN.md). The same start is in the desk paste and the Mini paste. There is no latest minute after T0.
 
 ## What and why
 
-**What.** Sixteen covenant families, all on from T0 through recovery. Offer 1.2 hop/s per family. Boson. Stagger 0. Families 1–13 pay 100 sompi/gram. Families 14–16 pay 200. Payment senders pay 150. The payment offer is 1,013 tx/s, then 2,027, then 3,040, then 4,053. The desk sends all of it. Each hold is 30 minutes after the step is stable. Then the offer steps back to 1,013 and the families continue for two hours. Mini is the only chain counter. The desk node process is stopped for the send, after Tuesday's runner is down, and the senders use public TN10 nodes. The chain data stays. The bot stays out. Miners stay off.
+**What.** Sixteen covenant families, on from T0 until the last payment target is met. Offer 1.2 hop/s per family. Boson. Stagger 0. Families 1–13 pay 100 sompi/gram. Families 14–16 pay 200. Payment senders pay 150. The payment targets are 1,013 tx/s, then 2,027, then 3,040, then 4,053, then 1,013 again. The desk sends all of it and stays on a target until three clean minutes land. A miss is logged and repaired on that same offer. Mini is the only chain counter. The desk node process is stopped for the send, after Tuesday's runner is down, and the senders use public TN10 nodes. The chain data stays. The bot stays out. Miners stay off.
 
 **Why.** The full why is [WHY.md](WHY.md). The mass-ceiling line used here is 3,040 payments per second. Sixteen is the largest mix whose confirm reading cleared 1,026 hops per family in 900 seconds.
 
@@ -71,12 +67,12 @@ The bot stays out of this test. Its machine freezes. [GO-BOT.md](GO-BOT.md) does
 | [plan/TRIES.md](plan/TRIES.md) | Why try 1 is shaped this way, and why more runs are expected |
 | [prompts/REVIEW.md](prompts/REVIEW.md) | Bot paste for the review. This is the one to send first |
 | [go/README.md](go/README.md) | Which paste goes on which computer |
-| [plan/PLAN.md](plan/PLAN.md) | Offers, fees, stable, latest minutes |
+| [plan/PLAN.md](plan/PLAN.md) | Offers, fees, and when a target is met |
 | [plan/COUNT.md](plan/COUNT.md) | How a hop and a payment are counted |
 | [plan/LATER.md](plan/LATER.md) | What was left off this clock |
 | [hashes/README.md](hashes/README.md) | One hash file. Absent until the desk runner writes it |
 | [counts/desk/README.md](counts/desk/README.md) | The desk's phase files |
 | [counts/mini/README.md](counts/mini/README.md) | Mini's phase files |
-| [logs/README.md](logs/README.md) | Where the method log will land after the run |
+| [logs/README.md](logs/README.md) | The armed line, the fix log, and the method file |
 
 Counts only. No key, seed, txid, covenant id, address, host or port in this repo.

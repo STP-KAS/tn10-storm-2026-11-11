@@ -8,7 +8,7 @@
 
 **43b.** Sixteen families, Mini sending, the desk counting. No date.
 
-**A five-hour covenant phase before any payments.** The quiet phase runs until the 1,026 window closes, and it ends at 13:00 UTC if that window has not closed. The thirty-minute clocks are the payment holds.
+**A deadline on a payment target.** Families and the first payment offer start together at T0. A target stays open until three clean minutes land. 1,026 hops in 900 seconds is a score in the files. It does not close a target.
 
 **vprogs, the guest tic-tac-toe, Kaspa Dollar, the vault lab, name services, and the other catalog rows.** No public covenant from those rows is submitted on this clock.
 

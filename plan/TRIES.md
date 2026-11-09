@@ -4,7 +4,7 @@
 
 DESK. This neuron will take more than one run.
 
-The question stays the one in [WHY.md](../WHY.md). Sixteen covenant families stay on while the payment offer climbs to four thirds of 3,040, which is 4,053 tx/s, and then the families keep hopping through a two-hour recovery. Try 1 is this clock, Wed 11 Nov 2026, 12:00 UTC. A miss stays in this repo. The next try is a later neuron. This page is not rewritten after 11:20 UTC to match the result.
+The question stays the one in [WHY.md](../WHY.md). Sixteen covenant families stay on while the payment offer climbs to four thirds of 3,040, which is 4,053 tx/s, and then returns to one third. Try 1 starts Wed 11 Nov 2026, 12:00 UTC. The hash launch before that start is timed. After the start there is no latest minute. A target stays open until three clean minutes land. A miss is logged with the repair and the reason, and the same offer continues. A miss of the whole run stays in this repo. The next try is a later neuron. This page is not rewritten after 11:20 UTC to match the result.
 
 ## What try 1 is
 
@@ -30,7 +30,11 @@ Two public TN10 nodes answered. Both were synced. Both were rusty-kaspa 2.1.0. B
 
 The family sender refreshes its coins with a UTXO read. A public node served that kind of read. Submitting 4,053 payments per second through a public node has not been measured. A public node can drop the socket, refuse the rate, or fall behind. That is a likely miss on try 1, and it is a result.
 
-The earlier desk hold of 2,207 tx/s was with a local node also verifying. Offering 4,053 from this one machine, with the node process stopped, is the unmeasured part. The climb still stops on a short. The offer is not lowered in the plan to hide that.
+The earlier desk hold of 2,207 tx/s was with a local node also verifying. Offering 4,053 from this one machine, with the node process stopped, is the unmeasured part. The run stays on that offer until three clean minutes land. The offer is not lowered in the plan to hide a miss. Each repair is a line in the fix log: what failed, what changed, and why.
+
+## The lane
+
+Each landed hop locks about 1 tKAS. The coins were prepared for a run that ended on a clock. This run has no end time after the start, so the same lane can run out before four thirds, or before the return to one third. The abort line still stops the sender. It is not lowered. A mining coin at or above 100,000 tKAS is not spent to keep an offer alive. A pool-low stop with no repair left is a method-file line. It is a result.
 
 ## What a later try may change
 

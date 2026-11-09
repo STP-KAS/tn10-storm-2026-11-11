@@ -4,17 +4,17 @@
 
 # Desk sender log
 
-The files are absent until each phase closes. A skipped phase is still a file: `SKIP`, the UTC time, and the reason.
+The files are absent until each target is met. A target that is still open has no file.
 
-| File | Phase |
+| File | Target |
 |---|---|
-| QUIET.md | 11:55 UTC until the quiet phase ends |
-| HOLD-1.md | one third, 1,013 tx/s |
+| HOLD-1.md | one third, 1,013 tx/s, first |
 | HOLD-2.md | two thirds, 2,027 tx/s |
 | HOLD-3.md | three thirds, 3,040 tx/s |
 | HOLD-4.md | four thirds, 4,053 tx/s |
-| DOWN.md | step-down to 1,013 tx/s |
-| RECOVERY.md | two hours at 1,013 tx/s, families still on |
+| RETURN.md | one third again, 1,013 tx/s, families still on |
+
+A file is written when that target is met. The minutes before the three clean ones stay in it.
 
 A row is the offer commanded, the attempts, and the rejects. Families 1–13 and 14–16 are separate. Mini's folder is the chain count. A minute not read in full stays marked. The gap is not filled.
 
