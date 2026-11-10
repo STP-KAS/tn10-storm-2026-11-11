@@ -91,7 +91,7 @@ The HOLD-4 sample is the first whole UTC minute whose start is at least 3 minute
 
 **1,026** accepted hops per family in 900 seconds is a score in the files. Report it. It does not open or close a target.
 
-Fees, sompi per gram, for the whole run: families 1–13 pay **100**. Families 14–16 pay **200**. Your payment senders pay **150**. Do not read a priority quote. A full mempool is logged as full and does not stop that sender. A reject for the rate stops that sender. Leave the fee. Log the miss. Leave the others up.
+Fees, sompi per gram, for the whole run: families 1–13 pay **100**. Families 14–16 pay **200**. Your payment senders pay **150**. The sixteen are one build: one program, one hop shape, one minter size, one token size. That token size is the size this plan calls about 1 tKAS locked per landed hop. Build both cohorts in the one family-sender process, on one node set. The rate is per family. A single rate on the whole process is a miss. Log it. Do not call the fee the cause. Do not start a second builder. If the funding coins are not one size, the file says so and does not call the fee the whole cause. Storage mass can move with the rate, because the fee comes out of the funding coin. That move is the fee. It is not a second knob. Do not read a priority quote. A full mempool is logged as full and does not stop that sender. A reject for the rate stops that sender. Leave the fee. Log the miss. Leave the others up.
 
 ## Hashes
 

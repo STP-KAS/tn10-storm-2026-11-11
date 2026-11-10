@@ -40,7 +40,7 @@ If [logs/BOT-HALT.md](logs/README.md) is on origin, stop. Write `NO SEND` and `h
 
 ## The minute
 
-The sample minute is the first whole UTC minute whose start is at least 3 minutes after the desk's HOLD-3 file's On origin time. You read that time from origin. A file on origin at 14:07:22Z pins 14:11:00Z. A file on origin at 14:07:00Z pins 14:10:00Z. You send in that minute. You do not choose a later minute. If you wake after it, write `NO SEND` and `suspend`. Your offer is the payments you can sign in that minute. You do not chase 4,053. Fee is **150** sompi per gram. Do not read a priority quote. Do not raise the fee.
+The sample minute is the first whole UTC minute whose start is at least 3 minutes after the desk's HOLD-3 file's On origin time. You read that time from origin. A file on origin at 14:07:22Z pins 14:11:00Z. A file on origin at 14:07:00Z pins 14:10:00Z. You send in that minute. You do not choose a later minute. If you wake after it, write `NO SEND` and `suspend`. Your offer is the payments you can sign in that minute. You do not chase 4,053. Fee is **150** sompi per gram. You do not build the families. Your 150 stays your own payment row. It is not a third family cohort. The desk's 100 and 200 stay on the desk. Do not read a priority quote. Do not raise the fee.
 
 A full mempool is a reject logged as full. It does not stop you inside that minute. A reject for the rate is logged as rate.
 

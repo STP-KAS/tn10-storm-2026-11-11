@@ -66,7 +66,7 @@ HOLD-4 is the one sample minute. You do not publish it on the desk file alone. Y
 
 You do not invent a skip. You do not close a step the desk has left open. For a scored file, when the desk's file is on origin, you publish yours. HOLD-4 waits, as the paragraph above says.
 
-The offer table, the fees, and the meaning of met are in [plan/PLAN.md](plan/PLAN.md). You do not send any of it.
+The offer table, the fees, and the meaning of met are in [plan/PLAN.md](plan/PLAN.md). You do not send any of it. The sixteen are one build. You still count families 1–13 and families 14–16 as two cohorts. You do not decide the cause. If the desk file says the rates were one rate, or the coins were not one size, you still publish both cohorts and you do not add a cause.
 
 ## What you publish
 
