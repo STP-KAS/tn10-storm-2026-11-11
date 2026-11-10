@@ -10,9 +10,9 @@ This repo is one neuron. It is not a restart of Tuesday and not a restart of the
 
 ## Who publishes
 
-The desk sends the sixteen families until RETURN is met, and sends every payment offer. The desk runner publishes one file under [counts/desk/](counts/desk/README.md) when a scored target closes, met or not met, and when the HOLD-4 minute is done. That file is submit-OK, the attempts, and the rejects split into rate and full. It is the sender log. It is not a chain count.
+The desk sends the sixteen families until RETURN is met, and sends every payment offer. The desk runner publishes one file under [counts/desk/](counts/desk/README.md) when a scored target closes, met or not met, and when the HOLD-4 minute is done. That file is submit-OK, the attempts, and the rejects split into rate and full, plus the cohort rows and the per-node count rows in [plan/COUNT.md](plan/COUNT.md). It is the sender log. It is not a chain count. The HOLD-4 minute is the one [plan/PLAN.md](plan/PLAN.md) pins from the HOLD-3 On origin time. The desk keeps the nodes it used in HOLD-3.
 
-Mini is the only chain counter. Mini counts and does not send. Mini's runner publishes the same phases under [counts/mini/](counts/mini/README.md). The bot publishes one sender log, [counts/bot/HOLD-4.md](counts/bot/README.md), for the observation minute. Each machine writes only its own folder. The chat does not publish a folder.
+Mini is the only chain counter. Mini counts and does not send. Mini's runner publishes the same phases under [counts/mini/](counts/mini/README.md). On HOLD-4 it waits for the bot file, for the halt file, or for 10 minutes, as [plan/PLAN.md](plan/PLAN.md) says. The bot publishes one sender log, [counts/bot/HOLD-4.md](counts/bot/README.md), for the observation minute. Each machine writes only its own folder. The chat does not publish a folder.
 
 | File | What it covers |
 |---|---|

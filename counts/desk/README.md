@@ -16,6 +16,6 @@ The files are absent until each step closes. A scored target that is still open 
 
 A scored file is written when that target is met, or when one pass of repairs leaves it `NOT MET`. The minutes before the close stay in it. HOLD-4 is the one sample minute.
 
-A row is submit-OK, the attempts, and the rejects split into rate and full. Families 1–13 and 14–16 are separate. Mini's folder is the chain count. A minute not read in full stays marked. The gap is not filled.
+A row is submit-OK, the attempts, and the rejects split into rate and full. Families 1–13 and 14–16 are separate, including the waiting count per minute. Each public node is a local number and a count row. Mini's folder is the chain count. A minute not read in full stays marked. The gap is not filled.
 
 The runner resolves git once, keeps that full path, and pushes one file per phase. Mini's folder is [../mini/README.md](../mini/README.md).

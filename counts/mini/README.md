@@ -4,7 +4,7 @@
 
 # Mini counts
 
-Five steps. Mini publishes each one when the desk's matching file is on origin, including a HOLD-3 file that says `NOT MET`. Mini is the only chain counter. The chat does not. On HOLD-4, a minute is `TWO SENDERS` only when the bot submitted in it. Otherwise it is `ONE SENDER`.
+Five steps. Mini publishes each scored file when the desk's matching file is on origin, including a HOLD-3 file that says `NOT MET`. HOLD-4 waits until the bot file or [logs/BOT-HALT.md](../../logs/README.md) is on origin, or for 10 minutes after the desk's HOLD-4 file, as [GO-MINI.md](../../GO-MINI.md) says. Mini is the only chain counter. The chat does not. On HOLD-4, `TWO SENDERS` only when the bot file is on origin and its line is not `NO SEND`. Otherwise `ONE SENDER`. Mini does not republish.
 
 | File | Target |
 |---|---|

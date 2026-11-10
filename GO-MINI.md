@@ -44,9 +44,17 @@ After 11:20 UTC this page stays as it is.
 
 ## The start, then the targets
 
-**T0** is **12:00 UTC (13:00 CET)**. Your counter goes on at **11:55 UTC**. You count until the desk's RETURN file is on origin. There is no count-off clock.
+**T0** is **12:00 UTC (13:00 CET)**. Your counter goes on at **11:55 UTC**. You count until the desk's RETURN file is on origin, and then you keep the local marks below for 15 minutes. There is no count-off clock.
 
-You publish one file when the desk's matching file is on origin, including a HOLD-3 file that says `NOT MET`. The minutes in a scored file run from the minute that offer opened through the close. HOLD-4 is the one sample minute. On that minute you write `TWO SENDERS` only when the bot's file shows it submitted. Otherwise you write `ONE SENDER`. The desk does the scored sends.
+You publish one scored file when the desk's matching file is on origin, including a HOLD-3 file that says `NOT MET`. The minutes in a scored file run from the minute that offer opened through the close.
+
+HOLD-4 is the one sample minute. You do not publish it on the desk file alone. You publish it when any one of these is true:
+
+- the desk's HOLD-4 file and the bot's HOLD-4 file are both on origin
+- the desk's HOLD-4 file and [logs/BOT-HALT.md](logs/README.md) are on origin
+- the desk's HOLD-4 file has been on origin for 10 minutes and the bot file is still absent
+
+`TWO SENDERS` only when the bot file is on origin and its line is not `NO SEND`. A `NO SEND` line is `ONE SENDER` plus that one word. An absent file at the bound is `ONE SENDER` and `bot-file-absent`. You do not republish if the bot file lands later. The wait does not hold the desk. The desk does the scored sends.
 
 | Offer | Your file |
 |---:|---|
@@ -56,7 +64,7 @@ You publish one file when the desk's matching file is on origin, including a HOL
 | 4,053 tx/s | [counts/mini/HOLD-4.md](counts/mini/README.md) |
 | 1,013 tx/s, again | [counts/mini/RETURN.md](counts/mini/README.md) |
 
-You do not invent a skip. You do not close a step the desk has left open. When the desk's file is on origin, you publish yours.
+You do not invent a skip. You do not close a step the desk has left open. For a scored file, when the desk's file is on origin, you publish yours. HOLD-4 waits, as the paragraph above says.
 
 The offer table, the fees, and the meaning of met are in [plan/PLAN.md](plan/PLAN.md). You do not send any of it.
 
@@ -74,7 +82,9 @@ Call git by its full path. Resolve it once when the runner starts. Empty output 
 
 One commit per file. Push. If the push fails, try once more, then stop and say the git error.
 
-The file clock is the accepting block header time on your node. A hop is in the file when that time is inside the phase. Count the sixteen family labels when the hash file's sha256 matches. Do not write the covenant id. Also count non-coinbase transactions your node accepted in the minute. That number includes base load. A minute you did not read in full stays marked. The gap is not filled. You do not write [counts/desk/](counts/desk/README.md). You do not average your rows with the desk.
+The file clock is the accepting block header time on your node. A hop is in the file when that time is inside the phase. Count the sixteen family labels when the hash file's sha256 matches. Do not write the covenant id. Carry landed hops per minute for families 1–13 and for families 14–16. Also count non-coinbase transactions your node accepted in the minute. That number includes base load. Your file also carries your sync, your DAA, and merged blocks per second. Those marks do not gate the desk. A minute you did not read in full stays marked. The gap is not filled. You do not write [counts/desk/](counts/desk/README.md). You do not average your rows with the desk.
+
+In the local log, each minute also records mempool size, free memory, and CPU. Those three stay out of the count file. If a read is slow, or memory runs short, drop those three first. The hop count stays. They do not send. When the desk's RETURN file is on origin, publish your RETURN file, then keep those local marks for 15 minutes after that file's On origin time. That tail is not a count file. Then stop.
 
 No txid, key, seed, address, host, port, or covenant id in the file. The accepting block hash may sit on the row.
 

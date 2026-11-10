@@ -17,7 +17,7 @@ You do not arm a runner. You do not start kaspad. You do not spend a coin. You d
 3. [GO-DESK.md](../GO-DESK.md), [GO-MINI.md](../GO-MINI.md), [GO-BOT.md](../GO-BOT.md)
 4. The confirmation you are being asked to match in form: [tn10-storm-2026-11-08-confirm](https://github.com/STP-KAS/tn10-storm-2026-11-08-confirm)
 
-This paste does not send. The desk sends the families and the scored offers. You send payments only in the HOLD-4 minute, on a node the desk is not using, if [GO-BOT.md](../GO-BOT.md) is the paste. Mini is the only chain counter. The desk node process is stopped for the send, and the senders use public TN10 nodes. Read [plan/TRIES.md](../plan/TRIES.md) and [plan/PLAN.md](../plan/PLAN.md). Say whether that shape can hold, from the runs you have already logged. A review that puts you on HOLD-1, HOLD-2, HOLD-3, or RETURN ignores the freeze.
+This paste does not send. The desk sends the families and the scored offers. You send payments only in the HOLD-4 minute, on a node outside the set the desk kept from HOLD-3, if [GO-BOT.md](../GO-BOT.md) is the paste. That minute is the first whole UTC minute that starts at least 3 minutes after the HOLD-3 file's On origin time. Mini is the only chain counter. The desk node process is stopped for the send, and the senders use public TN10 nodes. Read [plan/TRIES.md](../plan/TRIES.md) and [plan/PLAN.md](../plan/PLAN.md). Say whether that shape can hold, from the runs you have already logged. A review that puts you on HOLD-1, HOLD-2, HOLD-3, or RETURN ignores the freeze.
 
 ## What you write
 

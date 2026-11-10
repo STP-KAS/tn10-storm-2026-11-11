@@ -14,7 +14,7 @@ If the operator says this machine is the desk, or Mini, stop. Do not start a run
 
 You know you are the bot because this file was pasted here. The session name does not decide it.
 
-You send payments in the HOLD-4 minute, from your own coins, on a public node the desk is not using. You do not send covenants. You do not send in HOLD-1, HOLD-2, HOLD-3, or RETURN. You do not count. You do not mine. Mini counts. The desk sends the families and the scored offers. The rest of this file is the whole test. You do only the bot work.
+You send payments in the pinned HOLD-4 minute, from your own coins, on a public node outside the set the desk kept from HOLD-3. You do not send covenants. You do not send in HOLD-1, HOLD-2, HOLD-3, or RETURN. You do not count. You do not mine. Mini counts. The desk sends the families and the scored offers. The rest of this file is the whole test. You do only the bot work.
 
 [GO.md](GO.md) is the map. It does not start a machine.
 
@@ -30,7 +30,7 @@ On Wed 11 Nov 2026, at **11:20 UTC**, this read may start one runner, if `REVIEW
 
 The runner sleeps until the desk's [counts/desk/HOLD-3.md](counts/desk/README.md) is on origin. That file may say `MET` or `NOT MET`. Either one opens the minute. You do not send while you wait.
 
-The node list stays off this repo. Your local config holds it. Use one process on one public node the desk is not using, including the nodes the family senders are using. The node must answer synced, and its DAA score must be moving. If the config has no such node, you do not send. Write `NO SEND` and `no-free-node`. The desk's minute still runs. You do not wait for a node to appear.
+The node list stays off this repo. Your local config holds the nodes outside the set the desk used in HOLD-3. That set includes the family nodes. There is no local node on this machine. Use one process on one of those outside nodes. The node must answer synced, and its DAA score must be moving. If the config has no such node, you do not send. Write `NO SEND` and `no-free-node`. The desk's minute still runs. You do not wait for a node to appear. You do not take a node the desk is still using.
 
 You spend your own coins. You do not spend the desk's coins. If your coins cannot cover the minute, write `NO SEND` and `coins-short`. Do not print a balance.
 
@@ -40,7 +40,7 @@ If [logs/BOT-HALT.md](logs/README.md) is on origin, stop. Write `NO SEND` and `h
 
 ## The minute
 
-The sample is the first full minute in which the desk's submit path is up. You do not choose a later minute. Your offer is the payments you can sign in that minute. You do not chase 4,053. Fee is **150** sompi per gram. Do not read a priority quote. Do not raise the fee.
+The sample minute is the first whole UTC minute whose start is at least 3 minutes after the desk's HOLD-3 file's On origin time. You read that time from origin. A file on origin at 14:07:22Z pins 14:11:00Z. A file on origin at 14:07:00Z pins 14:10:00Z. You send in that minute. You do not choose a later minute. If you wake after it, write `NO SEND` and `suspend`. Your offer is the payments you can sign in that minute. You do not chase 4,053. Fee is **150** sompi per gram. Do not read a priority quote. Do not raise the fee.
 
 A full mempool is a reject logged as full. It does not stop you inside that minute. A reject for the rate is logged as rate.
 

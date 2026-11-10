@@ -40,9 +40,9 @@ Three rates, fixed for the whole run.
 
 Three of sixteen is the largest whole share that stays at or under one fifth. The score is accepted hops and accepted payments for each rate. A higher rate is a cohort in the file. It is not a promise that those transactions leave the mempool.
 
-Label C. Payments at 150 sit between families at 100 and families at 200. A yes for families 14–16 ahead of families 1–13, on HOLD-3 or in the HOLD-4 minute, is mostly that fee order. The 6 Oct saturated hold bought about 2 seconds at the median for 1.5×. The tail did not move.
+Label C. Payments at 150 sit between families at 100 and families at 200. A yes for families 14–16 ahead of families 1–13, on HOLD-3 or in the HOLD-4 minute, is mostly that fee order. The 6 Oct saturated hold bought about 2 seconds at the median for 1.5×. The tail did not move. HOLD-1 is the control. A lead already there at HOLD-1 is not congestion. The HOLD-4 minute holds at most about 72 hops per family, so a gap there is thin. The pages name only the fee. Shape, mass, and coin size stay unconfirmed. The bot's payments are a separate sender at 150, in the bot's own file.
 
-The node's priority bucket is not read. [FINDINGS 11](https://github.com/STP-KAS/tn-master/blob/main/FINDINGS.md) records a stale mempool quoting 1,644 sompi/gram against a public 100. [FINDINGS 13](https://github.com/STP-KAS/tn-master/blob/main/FINDINGS.md) records that 100× bought nothing more than 10×, and that 150× raised storage mass and lowered throughput.
+The node's priority bucket is not read, and a fee estimate is not sampled. [FINDINGS 11](https://github.com/STP-KAS/tn-master/blob/main/FINDINGS.md) records a stale mempool quoting 1,644 sompi/gram against a public 100. [FINDINGS 13](https://github.com/STP-KAS/tn-master/blob/main/FINDINGS.md) records that 100× bought nothing more than 10×, and that 150× raised storage mass and lowered throughput.
 
 ## What this neuron asks
 
@@ -52,7 +52,7 @@ HOLD-3 and the one minute at 4,053 are overload steps. Finding 1 says submitting
 
 ## Who sends
 
-The desk sends the families and the scored payment offers. Mini is the only chain counter. The bot sends payments only in the 4,053 minute, and only on a public node the desk is not using. The desk node process is stopped for the send, after Tuesday's runner is down, and the senders use public TN10 nodes. The chain data stays. The log is [plan/TRIES.md](plan/TRIES.md). This clock is try 1. Pulse is not asked to count it.
+The desk sends the families and the scored payment offers. Mini is the only chain counter. The bot sends payments only in the pinned 4,053 minute, and only on a public node outside the set the desk kept from HOLD-3. The desk does not drop a node to free one. The desk node process is stopped for the send, after Tuesday's runner is down, and the senders use public TN10 nodes. The chain data stays. The log is [plan/TRIES.md](plan/TRIES.md). This clock is try 1. Pulse is not asked to count it.
 
 ## What stays on its own clock
 

@@ -12,7 +12,7 @@ The desk sends the sixteen families and the scored payment offers. On the 4,053 
 
 Mini is the only chain counter. Mini counts on Mini's own node.
 
-The bot stays out of HOLD-1, HOLD-2, HOLD-3, and RETURN. That machine freezes, so those steps stay on the desk. On the observation minute the bot sends payments only, from its own coins, and only on a public node the desk is not using. If no free synced node answers, the bot does not send. The minute still runs. A suspend ends the bot's part of that minute. The desk does not wait.
+The bot stays out of HOLD-1, HOLD-2, HOLD-3, and RETURN. That machine freezes, so those steps stay on the desk. On the observation minute the bot sends payments only, from its own coins, and only on a public node outside the set the desk kept from HOLD-3. If no free synced node answers, the bot does not send. The minute still runs. A suspend ends the bot's part of that minute. The desk does not wait.
 
 Pulse is not asked to count try 1. An outside count waits until a run of our own, with Mini counting, is worth his time.
 
@@ -26,7 +26,7 @@ Before Wednesday genesis, after Tuesday's runner is down, the desk stops its nod
 
 ## What was checked the same evening
 
-Two public TN10 nodes answered. Both were synced. Both were rusty-kaspa 2.1.0. Both had a UTXO index. A read of the family lane came back in under a second. A third public node did not answer.
+Two public TN10 nodes answered. Both were synced. Both were rusty-kaspa 2.1.0. Both had a UTXO index. A read of the family lane came back in under a second. A third public node did not answer. That evening's count is not a cap. The desk uses every public node that answers synced. The bot has no local node. It sends only on a node outside the desk's set, and only in the minute [PLAN.md](PLAN.md) pins from the HOLD-3 On origin time.
 
 The family sender refreshes its coins with a UTXO read. A public node served that kind of read. Submitting 4,053 payments per second through a public node has not been measured. A public node can drop the socket, refuse the rate, or fall behind. That is a likely miss on try 1, and it is a result.
 
